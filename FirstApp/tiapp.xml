@@ -3,10 +3,10 @@
     <id>com.StroutEnterprises.firstapp</id>
     <name>FirstApp</name>
     <version>1.0</version>
-    <publisher>fredstrout</publisher>
+    <publisher>Fred L Strout</publisher>
     <url>http://</url>
     <description>not specified</description>
-    <copyright>2014 by fredstrout</copyright>
+    <copyright>2014 by Fred L Strout</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>

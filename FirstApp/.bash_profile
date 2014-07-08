@@ -1,0 +1,1 @@
+export PATH=“/Users/fredstrout/Documents/Android SDK/platform-tools/“:$PATH

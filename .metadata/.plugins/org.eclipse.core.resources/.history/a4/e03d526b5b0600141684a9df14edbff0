@@ -1,0 +1,54 @@
+// Project 1 - Cycle through an array
+
+Ti.UI.setBackgroundColor("White")
+
+// Open the first window
+var appWindow = Ti.UI.createWindow({
+	backgroundColor: "#f0ead6",
+});
+
+// Information pulled from the array will display here
+var appBackground = Ti.UI.createView({
+	backgroundColor: "00008b",
+	borderRadius: 8,
+	height: 200,
+	top: 35,
+	left: 20,
+	right: 20,
+	zIndex: 0
+});
+
+var buttonForward = Ti.UI.createView({
+	backgroundColor: "#fff",
+	borderRadius: 8,
+	left: 40,
+	right: 40,
+	height: 65,
+	top: appBackground.top + 20,
+	zIndex: 1
+});
+
+// Clicking this button will advance through the array
+var buttonForward = Ti.UI.createView({
+	backgroundColor: "Green",
+	borderRadius: 8,
+	width: "35%",
+	right: 40,
+	height: 65,
+	top: 155,
+	zIndex: 1
+});
+
+// click this button will rescind through the array
+var buttonBack = Ti.UI.createView({
+	backgroundColor: "Green",
+	borderRadius: 8,
+	width: "35%",
+	left: 40,
+	height: 65,
+	top: 155,
+	zIndex: 1
+});
+
+appWindow.add(appBackground, buttonForward, buttonBack);
+appWindow.open();

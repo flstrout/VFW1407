@@ -1,0 +1,18 @@
+// Project 1 - Cycle through an array
+
+Ti.UI.setBackgroundColor("White")
+
+var appWindow = Ti.UI.createWindow({
+	backgroundColor: "#f0ead6",
+});
+
+var infoDisplay = Ti.UI.createView({
+	backgroundColor: "00008b",
+	borderRadius: 8,
+	width: "85%",
+	height: 100,
+	top: 35
+});
+
+appWindow.add(infoDisplay);
+appWindow.open();

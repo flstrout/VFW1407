@@ -1,0 +1,37 @@
+Logger started at: Monday, July 7, 2014 7:08:47 PM CDT
+Component: com.appcelerator.titanium.ios.core
+Version: 1.0.0.1397694901
+[8:47.740] Sent: >21*1404778127738*version<
+[8:47.741] Recv: >1404778127738*2*3.2.3.GA<
+[8:47.743] Sent: >20*1404778127739*update<
+[8:47.743] Recv: >1404778127739*3.2.3.GA<
+[8:47.744] Sent: >45*1404778127740*option*stepFiltersEnabled*false<
+[8:47.745] Recv: >1404778127740<
+[8:47.746] Sent: >36*1404778127741*option*monitorXHR*true<
+[8:47.746] Recv: >1404778127741<
+[8:47.746] Sent: >45*1404778127742*option*suspendOnFirstLine*false<
+[8:47.747] Recv: >1404778127742<
+[8:47.747] Sent: >46*1404778127743*option*suspendOnExceptions*false<
+[8:47.747] Recv: >1404778127743<
+[8:47.747] Sent: >41*1404778127744*option*suspendOnErrors*true<
+[8:47.748] Recv: >1404778127744<
+[8:47.748] Sent: >43*1404778127745*option*suspendOnKeywords*true<
+[8:47.748] Recv: >1404778127745<
+[8:47.748] Sent: >45*1404778127746*option*bypassConstructors*false<
+[8:47.749] Recv: >1404778127746<
+[8:47.749] Sent: >45*1404778127747*option*stepFiltersEnabled*false<
+[8:47.749] Recv: >1404778127747<
+[8:47.749] Sent: >30*1404778127748*detailFormatters<
+[8:47.750] Recv: >1404778127748<
+[8:47.750] Sent: >20*1404778127749*enable<
+[8:47.750] Recv: >1404778127749<
+[8:47.752] Recv: >threads*created*0*kroll$1<
+[8:47.753] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
+[8:47.754] Recv: >log*out*[DEBUG] Loading: /Users/fredstrout/Library/Application Support/iPhone Simulator/7.1-64/Applications/D92B71F6-585C-42B9-9924-DDE7298D08E6/FirstApp.app/app.js, Resource: app_js<
+[8:47.754] Recv: >scripts*created*292608064|app:/app.js||1|65<
+[8:47.755] Recv: >resumed*0*started<
+[8:48.17] Recv: >log*out*[DEBUG] Application booted in 352.016985 ms<
+[9:22.534] Sent: >21*1404778127750*disable<
+[9:22.535] Recv: >1404778127750<
+[9:22.535] Sent: >10**terminate<
+----------End of file----------

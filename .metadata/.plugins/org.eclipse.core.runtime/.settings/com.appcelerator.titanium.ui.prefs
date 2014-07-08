@@ -1,7 +1,10 @@
 =run
+Android\ Emulator\ Process\:ConsoleLogLevel=Info
 FirstApp\:launchMode=run
-FirstApp\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
-LAST_LAUNCH_TIMESTAMP=1404748868494
+FirstApp\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.iPad Retina (64-bit)
+LAST_LAUNCH_TIMESTAMP=1404789176256
+StroutFred_Project1\:launchMode=run
+StroutFred_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103
