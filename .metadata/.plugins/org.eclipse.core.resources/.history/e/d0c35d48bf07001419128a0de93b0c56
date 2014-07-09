@@ -12,6 +12,7 @@ var appWindow = Ti.UI.createWindow({
 
 // Extra background for the app
 var appBackground = Ti.UI.createView({
+	//backgroundColor: "00008b",
 	borderRadius: globalBorderRadius,
 	borderWidth: 2,
 	borderColor: "#00008b",
@@ -27,13 +28,12 @@ var appTitle = Ti.UI.createLabel({
 	color: "#f2003c",
 	font: {fontSize: 18, fontFamily: "Arial", fontWeight: "bold"},
 	top: 15,
-	align: "center",
-	zIndex: 1
+	align: "center"
 });
 
 // Information pulled from the array will display here
 var infoDisplay = Ti.UI.createView({
-	backgroundColor: "#ffffff",
+	backgroundColor: "#fff",
 	borderRadius: globalBorderRadius,
 	borderWidth: 1,
 	borderColor: "#00008b",

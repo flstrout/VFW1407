@@ -27,7 +27,7 @@ var appTitle = Ti.UI.createLabel({
 	color: "#f2003c",
 	font: {fontSize: 18, fontFamily: "Arial", fontWeight: "bold"},
 	top: 15,
-	align: "center",
+	align: "center"
 	zIndex: 1
 });
 
