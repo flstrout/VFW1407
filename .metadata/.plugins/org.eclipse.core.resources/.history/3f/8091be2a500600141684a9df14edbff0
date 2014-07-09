@@ -1,9 +1,0 @@
-Ti.UI.setBackgroundColor("White")
-
-var appWindow = Ti.UI.createWindow({
-	
-	backgroundColor: "Blue"
-	
-});
-
-appWindow.open();
