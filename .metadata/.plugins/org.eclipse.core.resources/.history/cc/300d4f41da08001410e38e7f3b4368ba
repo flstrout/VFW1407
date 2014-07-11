@@ -62,9 +62,9 @@ var buttonNext = Ti.UI.createView({
 	borderColor: "#000000",
 	borderRadius: globalBorderRadius,
 	right: globalMargin,
-	top: infoDisplay.top + infoDisplay.height + (globalMargin/2),
 	width: 100,
-	height: 44
+	height: 44,
+	top: 145 + (globalMargin/2)
 });
 
 var buttonNextLabel = Ti.UI.createLabel({
@@ -79,9 +79,10 @@ var buttonPrevious = Ti.UI.createView({
 	backgroundColor: "#00008b",
 	borderRadius: globalBorderRadius,
 	left: globalMargin,
-	top: infoDisplay.top + infoDisplay.height + (globalMargin/2),
 	width: 100,
-	height: 44
+	height: 44,
+	top: 145 + (globalMargin/2),
+	right: globalMargin + globalMargin
 });
 
 var buttonPreviousLabel = Ti.UI.createLabel({

@@ -10,11 +10,10 @@ var globalBorderRadius = 2,
 
 // Open the first window
 var appWindow = Ti.UI.createWindow({
-	title: "Project 1",
 	backgroundColor: "#f0ead6",
 });
 
-// Border highlighting the app real estate
+// Extra background for the app
 var appBackground = Ti.UI.createView({
 	borderRadius: globalBorderRadius,
 	borderWidth: 2,
@@ -31,20 +30,20 @@ var appTitle = Ti.UI.createLabel({
 	shadowColor: "#a8a496",
 	shadowOffset: {x:2, y:1},
 	font: {fontSize: 18, fontFamily: "Arial", fontWeight: "bold"},
-	top: 15,
+	top: globalMargin + 15,
 	align: "center"
 });
 
 // Information pulled from the array will display here
 var infoDisplay = Ti.UI.createView({
-	backgroundColor: "#fff",
+	color: "#ffffff",
 	borderRadius: globalBorderRadius,
 	borderWidth: 1,
 	borderColor: "#00008b",
-	left: globalMargin,
-	right: globalMargin,
+	left: globalMargin + globalMargin,
+	right: globalMargin + globalMargin,
 	height: 85,
-	top: globalMargin*2
+	top: appBackground.top + globalMargin + globalMargin
 });
 
 var infoDisplayData = Ti.UI.createLabel({
@@ -61,10 +60,10 @@ var buttonNext = Ti.UI.createView({
 	backgroundColor: "#00008b",
 	borderColor: "#000000",
 	borderRadius: globalBorderRadius,
-	right: globalMargin,
-	top: infoDisplay.top + infoDisplay.height + (globalMargin/2),
+	right: globalMargin + globalMargin,
 	width: 100,
-	height: 44
+	height: 44,
+	top: infoDisplay.top + infoDisplay.height + (globalMargin/2)
 });
 
 var buttonNextLabel = Ti.UI.createLabel({
@@ -78,10 +77,10 @@ var buttonNextLabel = Ti.UI.createLabel({
 var buttonPrevious = Ti.UI.createView({
 	backgroundColor: "#00008b",
 	borderRadius: globalBorderRadius,
-	left: globalMargin,
-	top: infoDisplay.top + infoDisplay.height + (globalMargin/2),
+	left: globalMargin + globalMargin,
 	width: 100,
-	height: 44
+	height: 44,
+	top: infoDisplay.top + infoDisplay.height + (globalMargin/2)
 });
 
 var buttonPreviousLabel = Ti.UI.createLabel({
@@ -93,14 +92,16 @@ var buttonPreviousLabel = Ti.UI.createLabel({
 
 var loadEventHandlers = require("events");
 
-//This will not work in Android. Each item must be added using a separate line.
 appWindow.add(appBackground);
-appBackground.add(appTitle);
-appBackground.add(infoDisplay);
-infoDisplay.add(infoDisplayData);
-appBackground.add(buttonNext);
-buttonNext.add(buttonNextLabel);
-appBackground.add(buttonPrevious);
-buttonPrevious.add(buttonPreviousLabel);
 
+//This will not work in Android. Each item must be added using a separate line.
+appWindow.add(appTitle);
+appWindow.add(infoDisplay);
+appWindow.add(buttonNext);
+appWindow.add(buttonPrevious);
+
+
+infoDisplay.add(infoDisplayData);
+buttonNext.add(buttonNextLabel);
+buttonPrevious.add(buttonPreviousLabel);
 appWindow.open();

@@ -14,7 +14,7 @@ var appWindow = Ti.UI.createWindow({
 	backgroundColor: "#f0ead6",
 });
 
-// Border highlighting the app real estate
+// Extra background for the app
 var appBackground = Ti.UI.createView({
 	borderRadius: globalBorderRadius,
 	borderWidth: 2,
@@ -25,27 +25,34 @@ var appBackground = Ti.UI.createView({
 	right: globalMargin
 });
 
+appWindow.add(appBackground);
+
 var appTitle = Ti.UI.createLabel({
 	text: "Project 1",
 	color: "#f2003c",
 	shadowColor: "#a8a496",
 	shadowOffset: {x:2, y:1},
 	font: {fontSize: 18, fontFamily: "Arial", fontWeight: "bold"},
-	top: 15,
+	top: globalMargin + 15,
 	align: "center"
 });
+
+appBackground.add(appTitle);
 
 // Information pulled from the array will display here
 var infoDisplay = Ti.UI.createView({
 	backgroundColor: "#fff",
+	color: "#fff",
 	borderRadius: globalBorderRadius,
 	borderWidth: 1,
 	borderColor: "#00008b",
-	left: globalMargin,
-	right: globalMargin,
+	left: globalMargin + globalMargin,
+	right: globalMargin + globalMargin,
 	height: 85,
-	top: globalMargin*2
+	top: appBackground.top + globalMargin + globalMargin
 });
+
+appBackground.add(infoDisplay);
 
 var infoDisplayData = Ti.UI.createLabel({
 	text: "Test Data!",
@@ -56,16 +63,20 @@ var infoDisplayData = Ti.UI.createLabel({
 	alignText: "center"
 });
 
+infoDisplay.add(infoDisplayData);
+
 // Clicking this button will advance through the array
 var buttonNext = Ti.UI.createView({
 	backgroundColor: "#00008b",
 	borderColor: "#000000",
 	borderRadius: globalBorderRadius,
-	right: globalMargin,
-	top: infoDisplay.top + infoDisplay.height + (globalMargin/2),
+	right: globalMargin + globalMargin,
 	width: 100,
-	height: 44
+	height: 44,
+	top: infoDisplay.top + infoDisplay.height + (globalMargin/2)
 });
+
+appBackground.add(buttonNext);
 
 var buttonNextLabel = Ti.UI.createLabel({
 	text: "Next",
@@ -74,15 +85,19 @@ var buttonNextLabel = Ti.UI.createLabel({
 	alignText: "center"
 });
 
+buttonNext.add(buttonNextLabel);
+
 // click this button will rescind through the array
 var buttonPrevious = Ti.UI.createView({
 	backgroundColor: "#00008b",
 	borderRadius: globalBorderRadius,
-	left: globalMargin,
-	top: infoDisplay.top + infoDisplay.height + (globalMargin/2),
+	left: globalMargin + globalMargin,
 	width: 100,
-	height: 44
+	height: 44,
+	top: infoDisplay.top + infoDisplay.height + (globalMargin/2)
 });
+
+appBackground.add(buttonPrevious);
 
 var buttonPreviousLabel = Ti.UI.createLabel({
 	text: "Previous",
@@ -91,16 +106,10 @@ var buttonPreviousLabel = Ti.UI.createLabel({
 	align: "center"
 });
 
+buttonPrevious.add(buttonPreviousLabel);
+
 var loadEventHandlers = require("events");
 
 //This will not work in Android. Each item must be added using a separate line.
-appWindow.add(appBackground);
-appBackground.add(appTitle);
-appBackground.add(infoDisplay);
-infoDisplay.add(infoDisplayData);
-appBackground.add(buttonNext);
-buttonNext.add(buttonNextLabel);
-appBackground.add(buttonPrevious);
-buttonPrevious.add(buttonPreviousLabel);
 
 appWindow.open();
