@@ -1,6 +1,5 @@
 // Fred L. Strout
-// VFW-1 ~ 1407
-// Project 1 - Events
+// Project 1 - Functions
 // Created On: 7/9/2014
 
 var states = ["Alabama", "California", "Florida", "Louisiana", "Maine", "New Mexico", "Kansas"],
@@ -18,8 +17,6 @@ var nextData = function(){
 		text: states[i],
 		backgroundColor: "#ffffff",
 		color: "#000000",
-		shadowColor: "#cccccc",
-		shadowOffset: {x:2, y:1},
 		width: 200,
 		heigth: 28,
 		font: {fontSize: 22, fontFamily: "Arial", fontWeight: "bold"},
@@ -40,8 +37,6 @@ var previousData = function(){
 		text: states[i],
 		backgroundColor: "#ffffff",
 		color: "#000000",
-		shadowColor: "#cccccc",
-		shadowOffset: {x:2, y:1},
 		width: 200,
 		heigth: 28,
 		font: {fontSize: 22, fontFamily: "Arial", fontWeight: "bold"},

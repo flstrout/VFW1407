@@ -2,6 +2,10 @@
 <launchConfiguration type="com.appcelerator.titanium.mobile.ui.android.installer.launchConfigurationType">
 <stringAttribute key="ATTR_PROJECT_NAME" value="StroutFred_Project1"/>
 <stringAttribute key="abi" value="armeabi"/>
+<stringAttribute key="key_password" value=""/>
+<stringAttribute key="keystore_alias" value=""/>
+<stringAttribute key="keystore_password" value=""/>
+<stringAttribute key="keystore_path" value=""/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/StroutFred_Project1"/>
 </listAttribute>
