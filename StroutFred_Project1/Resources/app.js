@@ -98,7 +98,11 @@ var buttonPreviousLabel = Ti.UI.createLabel({
 var loadEventHandlers = require("events");
 
 appWindow.add(appBackground);
-appBackground.add(appTitle, infoDisplay, buttonNext, buttonPrevious);
+
+//This will not work in Android. Each item must be added using a separate line.
+appBackground.add(appTitle, infoDisplay, buttonNext, buttonPrevious); 
+
+
 infoDisplay.add(infoDisplayData);
 buttonNext.add(buttonNextLabel);
 buttonPrevious.add(buttonPreviousLabel);
