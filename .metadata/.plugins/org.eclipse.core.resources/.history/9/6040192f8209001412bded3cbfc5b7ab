@@ -3,7 +3,6 @@
 // Project 1 - Cycle through an array
 // Created On: 7/8/2014
 
-// Sets the background color to black - could have used '#000' but didn't for consistancy.
 Ti.UI.setBackgroundColor("#000000");
 
 var globalBorderRadius = 2,
@@ -26,7 +25,6 @@ var appBackground = Ti.UI.createView({
 	right: globalMargin
 });
 
-// Make a Title Label for the app
 var appTitle = Ti.UI.createLabel({
 	text: "Project 1",
 	color: "#f2003c",
@@ -49,7 +47,6 @@ var infoDisplay = Ti.UI.createView({
 	top: globalMargin*2
 });
 
-// Made a label to temporarily display 'Test Data' when the app first opens
 var infoDisplayData = Ti.UI.createLabel({
 	text: "Test Data!",
 	color: "#000000",
@@ -70,7 +67,6 @@ var buttonNext = Ti.UI.createView({
 	height: 44
 });
 
-// Label for 'buttonNext'
 var buttonNextLabel = Ti.UI.createLabel({
 	text: "Next",
 	color: "#ffffff",
@@ -88,7 +84,6 @@ var buttonPrevious = Ti.UI.createView({
 	height: 44
 });
 
-// Label for 'buttonPrevious'
 var buttonPreviousLabel = Ti.UI.createLabel({
 	text: "Previous",
 	color: "#ffffff",
@@ -96,11 +91,9 @@ var buttonPreviousLabel = Ti.UI.createLabel({
 	align: "center"
 });
 
-// Link to the events.js file - where all the action code is
 var loadEventHandlers = require("events");
 
-// This will not work in Android. Each item must be added using a separate line.
-// I still was unable to get this working right for the Android emulator.
+//This will not work in Android. Each item must be added using a separate line.
 appWindow.add(appBackground);
 appBackground.add(appTitle);
 appBackground.add(infoDisplay);
