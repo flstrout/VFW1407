@@ -2,9 +2,11 @@
 Android\ Emulator\ Process\:ConsoleLogLevel=Info
 FirstApp\:launchMode=run
 FirstApp\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.iPad Retina (64-bit)
-LAST_LAUNCH_TIMESTAMP=1405140646804
+LAST_LAUNCH_TIMESTAMP=1405348952576
 StroutFred_Project1\:launchMode=run
-StroutFred_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
+StroutFred_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
+StroutFred_Project2\:launchMode=run
+StroutFred_Project2\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 autoLaunchShortcut=false
 eclipse.preferences.version=1
 preference.show.console.onError=true
