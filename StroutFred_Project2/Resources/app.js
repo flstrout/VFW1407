@@ -6,7 +6,8 @@
 Ti.UI.setBackgroundColor('#000');
 
 // Data
-var listA = [{title: "Break Room"}, {title: "Front Counter Cooler"}, {title: "Brown Trays"}, {title: "Sauces"}, {title: "++Wall Freezers"}, {title: "++Bathrooms"}];
+var listA = [{title: "Break Room"}, {title: "Front Counter Cooler"}, {title: "Brown Trays"}, {title: "Nugget Sauces"}, {title: "Salad Dressings"}, {title: "Candies & Toppings"}, {title: "++Wall Freezers"}, {title: "++Bathrooms"}];
+var listB = [{title: "ABS Cups & Lids"}, {title: "ABS Ice (if needed)"}, {title: "Drive Thru Cooler"}, {title: "Iced Teas"}, {title: "Service Trash"}, {title: "Service Floors"}, {title: "++HLZ's & Bagging Station"}, {title: "++BIM & Melitta Machines"}];
 
 var tableWindow = Ti.UI.createWindow({
 	backgroundColor: "#ccc"
@@ -40,7 +41,31 @@ if (Ti.Platform.name === "iPhone OS"){
 	tasks.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
 };
 
-tasks.setData(listA);
+var aListSection = Ti.UI.createTableViewSection({
+	headerTitle: "List A - Back Booth"
+});
+
+var bListSection = Ti.UI.createTableViewSection({
+	headerTitle: "List B - Front Booth"
+});
+
+for(var i=0, j=listA.length; i<j; i++){
+	var sectionDetail = Ti.UI.createTableViewRow({
+		title: listA[i].title
+	});
+	aListSection.add(sectionDetail);
+};
+
+for(var i=0, j=listB.length; i<j; i++){
+	var sectionDetail = Ti.UI.createTableViewRow({
+		title: listB[i].title
+	});
+	bListSection.add(sectionDetail);
+};
+
+var lists = [aListSection, bListSection];
+
+tasks.setData(lists);
 
 titleView.add(titleLabel);
 tableWindow.add(titleView, border, tasks);
