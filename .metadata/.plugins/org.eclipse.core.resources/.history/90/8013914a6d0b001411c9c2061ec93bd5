@@ -6,7 +6,7 @@
 Ti.UI.setBackgroundColor('#000');
 
 // Data
-var listA = [{title: "Break Room"}, {title: "Front Counter Cooler"}, {title: "Brown Trays"}, {title: "Sauces"}, {title: "++Wall Freezers"}, {title: "++Bathrooms"}];
+var listA = [{title: "Break Room"}, {title: "Front Counter Cooler"}, {title: "Brown Trays"}, {title: "Sauces"}, {title: "*Wall Freezers"}];
 
 var tableWindow = Ti.UI.createWindow({
 	backgroundColor: "#ccc"
@@ -33,14 +33,9 @@ var titleLabel = Ti.UI.createLabel({
 });
 
 var tasks = Ti.UI.createTableView({
+	data: listA,
 	top: border.top + border.height
 });
-
-if (Ti.Platform.name === "iPhone OS"){
-	tasks.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
-};
-
-tasks.setData(listA);
 
 titleView.add(titleLabel);
 tableWindow.add(titleView, border, tasks);

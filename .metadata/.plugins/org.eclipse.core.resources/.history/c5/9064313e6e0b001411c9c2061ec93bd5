@@ -33,15 +33,11 @@ var titleLabel = Ti.UI.createLabel({
 });
 
 var tasks = Ti.UI.createTableView({
+	data: listA,
 	top: border.top + border.height
 });
 
-if (Ti.Platform.name === "iPhone OS"){
-	tasks.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
-};
-
-tasks.setData(listA);
-
+//if (Ti.Platform === "iPhone OS")
 titleView.add(titleLabel);
 tableWindow.add(titleView, border, tasks);
 tableWindow.open();
