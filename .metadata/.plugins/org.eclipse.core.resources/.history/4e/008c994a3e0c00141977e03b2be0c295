@@ -26,23 +26,29 @@ var listB = [{title: "ABS Cups & Lids", desc: "Clean"},
 	{title: "++BIM & Melitta Machines", desc: "Clean"}
 ];
 
-// New Window => Navigation Window
 var tableWindow = Ti.UI.createWindow({
-	title: "Tasks",
+	title: "Other Tasks",
 	backgroundColor: "#ccc"
 });
 
 var navWindow = Ti.UI.iOS.createNavigationWindow({
 	window: tableWindow
 });
- // Create the Table
-var tasks = Ti.UI.createTableView({
+
+var border = Ti.UI.createView({
+	backgroundColor: "#333",
 	top: 0,
-	// Conditional not needed; we're using a Navigation Window which is iOS platform specific.
-	style: Ti.UI.iPhone.TableViewStyle.GROUPED
+	height: 1
 });
 
-// Define Headers (beginning )& Footers (end) of each section.
+var tasks = Ti.UI.createTableView({
+	top: border.top + border.height
+});
+
+if (Ti.Platform.name === "iPhone OS"){
+	tasks.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+};
+
 var aListSection = Ti.UI.createTableViewSection({
 	headerTitle: "List A - Back Booth"
 });
@@ -51,27 +57,31 @@ var bListSection = Ti.UI.createTableViewSection({
 	headerTitle: "List B - Front Booth"
 });
 
-// Show the Task details when the Task is clicked
 var showDetail = function(){
 	var detailWindow = Ti.UI.createWindow({
 		title: this.title
+	});
+	
+	var detailBorder = Ti.UI.createView({
+		backgroundColor: "#333",
+		top: 0,
+		height: 1
 	});
 	
 	var detailViewText = Ti.UI.createLabel({
 		text: this.detail,
 		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
 		color: "#fff",
-		top: 20,
+		top: detailBorder.top + 20,
 		left: 15,
 		right: 15
 	});
 	
-	detailWindow.add(detailViewText);
+	detailWindow.add(detailBorder);
 	
 	navWindow.openWindow(detailWindow);
 };
 
-// Populate the sections with data from the json.
 for(var i=0, j=listA.length; i<j; i++){
 	var sectionDetail = Ti.UI.createTableViewRow({
 		title: listA[i].title,
@@ -96,5 +106,6 @@ var lists = [aListSection, bListSection];
 
 tasks.setData(lists);
 
-tableWindow.add(tasks);
+
+tableWindow.add(border, tasks);
 navWindow.open();
