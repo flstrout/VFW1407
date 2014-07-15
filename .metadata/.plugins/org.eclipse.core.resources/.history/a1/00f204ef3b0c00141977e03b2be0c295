@@ -27,7 +27,7 @@ var listB = [{title: "ABS Cups & Lids", desc: "Clean"},
 ];
 
 var tableWindow = Ti.UI.createWindow({
-	title: "Tasks",
+	title: "Other Tasks",
 	backgroundColor: "#ccc"
 });
 
@@ -59,27 +59,34 @@ var bListSection = Ti.UI.createTableViewSection({
 
 var showDetail = function(){
 	var detailWindow = Ti.UI.createWindow({
-		title: this.title
+		backgroundColor: "#ccc"
+	});
+	
+	var detailView = Ti.UI.createView({
+		backgroundColor: "#ccc",
+		height: 65,
+		top: 0
 	});
 	
 	var detailBorder = Ti.UI.createView({
 		backgroundColor: "#333",
-		top: 0,
+		top: detailView.top + detailView.height,
 		height: 1
 	});
 	
-	var detailViewText = Ti.UI.createLabel({
-		text: this.detail,
-		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
-		color: "#fff",
-		top: detailBorder.top + 20,
-		left: 15,
-		right: 15
+	var detailViewLabel = Ti.UI.createLabel({
+		text: "Other Tasks",
+		top: 30,
+		font: {fontSize: 16, fontFamily: "Arial", fontWeight: "bold"},
+		color: "#000",
+		width: "100%",
+		textAlign: "center"
 	});
 	
-	detailWindow.add(detailBorder, detailViewText);
+	detailView.add(detailViewLabel);
+	detailWindow.add(detailView, detailBorder);
 	
-	navWindow.openWindow(detailWindow);
+	detailWindow.open();
 };
 
 for(var i=0, j=listA.length; i<j; i++){
