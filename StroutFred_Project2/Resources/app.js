@@ -92,6 +92,17 @@ for (var n in jsonData){ // Populate Section Headers & Footers
 			sectionDetail.addEventListener("click", showDetail);
 		};
 	};
+	
+/*
+ * Your loop above is only show the last section because that's what this loop is instructed to do according to your code. 
+ * Remember, variables declared within a loop will be erased/overwriten with new data the next time the loop runs. This means
+ * the first section you create is lost as soon as the loop runs a second time. 
+ * 
+ * You must capute the data and store it in a safe place (like an array) outside the loop.
+ * The process is like this:
+ * Loop -> Create Objects -> Grab and store the objects someplace outside the loop -> continue loop.
+ * The object that contains the saved objects outside your loop is the object (or array) that you'd use to set your table data.
+ */
 
 var lists = [tableSection];
 
