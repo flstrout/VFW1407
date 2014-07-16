@@ -95,7 +95,7 @@ for (var n in jsonData){ // Populate Section Headers & Footers
 	};
 };
 
-var lists = [tableSection];
+lists = [tableSection];
 
 tasks.setData(lists);
 

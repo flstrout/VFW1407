@@ -77,7 +77,7 @@ var showDetail = function(){
 	navWindow.openWindow(detailWindow);
 };
 
-for (var n in jsonData){ // Populate Section Headers & Footers
+var data = function(){ for (var n in jsonData){ // Populate Section Headers & Footers
 	console.log (jsonData[n].headerText);
 	var tableSection = Ti.UI.createTableViewSection({
 		headerTitle: jsonData[n].headerText,
@@ -94,8 +94,9 @@ for (var n in jsonData){ // Populate Section Headers & Footers
 		sectionDetail.addEventListener("click", showDetail);
 	};
 };
+};
 
-var lists = [tableSection];
+var lists = [data];
 
 tasks.setData(lists);
 

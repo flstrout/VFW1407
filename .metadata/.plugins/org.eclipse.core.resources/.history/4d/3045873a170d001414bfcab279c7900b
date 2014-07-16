@@ -95,9 +95,9 @@ for (var n in jsonData){ // Populate Section Headers & Footers
 	};
 };
 
-var lists = [tableSection];
+// var lists = [tableSection];
 
-tasks.setData(lists);
+tasks.setData([tableSection]);
 
 tableWindow.add(tasks);
 navWindow.open();

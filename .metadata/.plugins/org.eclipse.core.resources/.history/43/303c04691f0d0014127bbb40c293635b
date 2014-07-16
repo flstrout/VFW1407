@@ -81,9 +81,9 @@ for (var n in jsonData){ // Populate Section Headers & Footers
 	console.log (jsonData[n].headerText);
 	var tableSection = Ti.UI.createTableViewSection({
 		headerTitle: jsonData[n].headerText,
-		footerTitle: jsonData[n].footerText
+		//footerTitle: jsonData[n].footerText
 	});
-	for (var o in jsonData[n].tasks){ // Populate the Sections with Data
+	/*for (var o in jsonData[n].tasks){ // Populate the Sections with Data
 		console.log(jsonData[n].tasks[o].task);
 		var sectionDetail = Ti.UI.createTableViewRow({
 			title: jsonData[n].tasks[o].task,
@@ -92,10 +92,10 @@ for (var n in jsonData){ // Populate Section Headers & Footers
 		});
 		tableSection.add(sectionDetail);
 		sectionDetail.addEventListener("click", showDetail);
-	};
+	};*/
 };
 
-var lists = [tableSection];
+var lists = [js0nData];
 
 tasks.setData(lists);
 

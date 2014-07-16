@@ -79,7 +79,7 @@ var showDetail = function(){
 
 for (var n in jsonData){ // Populate Section Headers & Footers
 	console.log (jsonData[n].headerText);
-	var tableSection = Ti.UI.createTableViewSection({
+	var tableSection = Ti.UI.createTableViewSections({
 		headerTitle: jsonData[n].headerText,
 		footerTitle: jsonData[n].footerText
 	});

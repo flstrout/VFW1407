@@ -77,23 +77,21 @@ var showDetail = function(){
 	navWindow.openWindow(detailWindow);
 };
 
-for (var n in jsonData){ // Populate Section Headers & Footers
-	console.log (jsonData[n].headerText);
-	var tableSection = Ti.UI.createTableViewSection({
-		headerTitle: jsonData[n].headerText,
-		footerTitle: jsonData[n].footerText
-	});
-	for (var o in jsonData[n].tasks){ // Populate the Sections with Data
-		console.log(jsonData[n].tasks[o].task);
-		var sectionDetail = Ti.UI.createTableViewRow({
-			title: jsonData[n].tasks[o].task,
-			detail: jsonData[n].tasks[o].desc,
-			hasChild: true
+for (var i=0; i<jsonData.length; i++){ // Populate Section Headers & Footers
+		var tableSection = Ti.UI.createTableViewSection({
+			headerTitle: jsonData[i].headerText,
+			footerTitle: jsonData[i].footerText
 		});
-		tableSection.add(sectionDetail);
-		sectionDetail.addEventListener("click", showDetail);
+		for (var o in jsonData[n].tasks){ // Populate the Sections with Data
+			var sectionDetail = Ti.UI.createTableViewRow({
+				title: jsonData[n].tasks[o].task,
+				detail: jsonData[n].tasks[o].desc,
+				hasChild: true
+			});
+			tableSection.add(sectionDetail);
+			sectionDetail.addEventListener("click", showDetail);
+		};
 	};
-};
 
 var lists = [tableSection];
 
