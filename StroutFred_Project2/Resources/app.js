@@ -21,7 +21,7 @@ var jsonData = {
 			},
 			{
 				"task": "Break Room",
-				"desc": "Make sure the Break Room is Neat, Clean and Organized (NCO). Hangup any jackets that are laying around. Throw away any used cups that are no longer being used - if it has a big sweat puddle, throw it away. Wipedown the tables and seating. Sweep and mop the floors."
+				"desc": "Make sure the Break Room is Neat, Clean and Organized (NCO). Hangup any jackets that are laying around. Throw away any old drink cups (if the drink has a big condensation puddle around the bottom, throw it away). Wipedown the tables and seats. Sweep and mop the floors."
 			}
 		]
 	},
@@ -31,11 +31,11 @@ var jsonData = {
 		"tasks": [
 			{
 				"task": "Cups & Lids",
-				"desc": "Make sure that all the cups and lids are restocked and in their proper places. Don't forget about the overstock location."
+				"desc": "Make sure that all the cups and lids are restocked and in their proper places. Don't forget to restock the overstock location."
 			},
 			{
 				"task": "Service Trash",
-				"desc": "Throw away any full trash liners in the Service Area. Wash the empty cans if necessary and replace with new liners"
+				"desc": "Throw away any full trash liners in the Service Area. Wash the empty cans if necessary and replace the trash liner with a new one."
 			},
 		]
 	}
@@ -68,23 +68,22 @@ var showDetail = function(){
 		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
 		color: "#fff",
 		top: 20,
-		left: 15,
-		right: 15
+		left: 5,
+		right: 5
 	});
-	
 	detailWindow.add(detailViewText);
-	
 	navWindow.openWindow(detailWindow);
 };
 
+var lists = [];
+
 for (var n in jsonData){ // Populate Section Headers & Footers
-	console.log (jsonData[n].headerText);
 	var tableSection = Ti.UI.createTableViewSection({
 		headerTitle: jsonData[n].headerText,
 		footerTitle: jsonData[n].footerText
 	});
-	for (var o in jsonData[n].tasks){ // Populate the Sections with Data
-		console.log(jsonData[n].tasks[o].task);
+	lists.push(tableSection);// Send Variables outside the Loop so they won't get overwritten
+	for (o in jsonData[n].tasks){ // Populate the Sections with Data
 		var sectionDetail = Ti.UI.createTableViewRow({
 			title: jsonData[n].tasks[o].task,
 			detail: jsonData[n].tasks[o].desc,
@@ -95,9 +94,6 @@ for (var n in jsonData){ // Populate Section Headers & Footers
 	};
 };
 
-var lists = [tableSection];
-
 tasks.setData(lists);
-
 tableWindow.add(tasks);
 navWindow.open();
