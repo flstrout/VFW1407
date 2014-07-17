@@ -3,6 +3,7 @@
 // Project 2 - JSON Data
 // Created On: 7/14/2014
 
+// Data
 var jsonData = {
 	"listA":{
 		"headerText": "List A",
@@ -18,7 +19,7 @@ var jsonData = {
 			},
 			{
 				"task": "Break Room",
-				"desc": "Make sure the Break Room is Neat, Clean and Organized (NCO). Hangup any jackets that are laying around. Throw away any used cups that are no longer being used - if it has a big sweat puddle, throw it away. Wipedown the tables and seating. Sweep and mop the floors."
+				"desc": "Make sure the Break Room is Neat, Clean and Organized (NCO). Hangup any jackets that are laying around. Throw away any old drink cups (if the drink has a big condensation puddle around the bottom, throw it away). Wipedown the tables and seats. Sweep and mop the floors."
 			}
 		]
 	},
@@ -28,24 +29,52 @@ var jsonData = {
 		"tasks": [
 			{
 				"task": "Cups & Lids",
-				"desc": "Make sure that all the cups and lids are restocked and in their proper places. Don't forget about the overstock location."
+				"desc": "Make sure that all the cups and lids are restocked and in their proper places. Don't forget to restock the overstock location."
 			},
 			{
 				"task": "Service Trash",
-				"desc": "Throw away any full trash liners in the Service Area. Wash the empty cans if necessary and replace with new liners"
+				"desc": "Throw away any full trash liners in the Service Area. Wash the empty cans if necessary and replace the trash liners with new ones."
 			},
 		]
 	}
 };
 
-var myTasks = jsonData[n].tasks;
-
-for(var n in jsonData){
-	console.log(jsonData[n].headerText);
-	for(var i = 0; i<jsonData[n].tasks.length; i++){
-		for(var x in jsonData[n].tasks[i]){
-			console.log(" -" + jsonData[n].tasks[i][x]);
-		};
-	};
-	console.log(jsonData[n].footerText);
+// Show the Task details when the Task is clicked
+var showDetail = function(){
+	var detailWindow = Ti.UI.createWindow({
+		title: this.title
+	});
+	
+	var detailViewText = Ti.UI.createLabel({
+		text: this.detail,
+		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+		color: "#fff",
+		top: 20,
+		left: 10,
+		right: 10
+	});
+	detailWindow.add(detailViewText);
+	navWindow.openWindow(detailWindow);
 };
+
+var lists = [];
+
+for (var n in jsonData){ // Populate Section Headers & Footers
+	var tableSection = Ti.UI.createTableViewSection({
+		headerTitle: jsonData[n].headerText,
+		footerTitle: jsonData[n].footerText
+	});
+	lists.push(tableSection);// Send Variables outside the Loop so they won't get overwritten
+	for (o in jsonData[n].tasks){ // Populate the Sections with Data
+		var sectionDetail = Ti.UI.createTableViewRow({
+			title: jsonData[n].tasks[o].task,
+			detail: jsonData[n].tasks[o].desc,
+			hasChild: true
+		});
+		tableSection.add(sectionDetail);
+		sectionDetail.addEventListener("click", showDetail);
+	};
+};
+
+tasks.setData(lists);
+tableWindow.add(tasks);
