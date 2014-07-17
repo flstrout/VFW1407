@@ -3,7 +3,7 @@
 // Project 2 - Working with tables
 // Created On: 7/14/2014
 
-Ti.UI.setBackgroundColor('#333');
+Ti.UI.setBackgroundColor('#999');
 
 // New Window => Navigation Window
 var tableWindow = Ti.UI.createWindow({

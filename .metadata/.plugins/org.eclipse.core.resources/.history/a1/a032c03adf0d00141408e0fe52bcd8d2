@@ -3,12 +3,12 @@
 // Project 2 - Working with tables
 // Created On: 7/14/2014
 
-Ti.UI.setBackgroundColor('#333');
+Ti.UI.setBackgroundColor('#fc0');
 
 // New Window => Navigation Window
 var tableWindow = Ti.UI.createWindow({
 	title: "Tasks",
-	backgroundColor: "#ccc"
+	backgroundColor: "#dd1021"
 });
 
 var navWindow = Ti.UI.iOS.createNavigationWindow({
