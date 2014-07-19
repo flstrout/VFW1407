@@ -40,13 +40,13 @@ var jsonData = {
 };
 
 // Show the Task details when the Task is clicked
-var showDetail = function(dataSource){
+var showDetail = function(){
 	var detailWindow = Ti.UI.createWindow({
-		title: dataSource.title
+		title: this.title
 	});
 	// Uses the this keyword to pull the detail property from the for in loop
 	var detailViewText = Ti.UI.createLabel({
-		text: dataSource.detail,
+		text: this.detail,
 		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
 		color: "#fff",
 		top: 20,
@@ -74,12 +74,9 @@ for (var n in jsonData){
 			hasChild: true
 		});
 		tableSection.add(sectionDetail);
-		//sectionDetail.addEventListener("click", showDetail);
+		sectionDetail.addEventListener("click", showDetail);
 	};
 };
 
 tasks.setData(lists);
-tasks.addEventListener("click", function(event){
-	showDetail(event.source);
-});
 tableWindow.add(tasks);

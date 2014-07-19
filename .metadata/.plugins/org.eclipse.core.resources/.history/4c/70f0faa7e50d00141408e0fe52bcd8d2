@@ -40,13 +40,13 @@ var jsonData = {
 };
 
 // Show the Task details when the Task is clicked
-var showDetail = function(dataSource){
+var showDetail = function(){
 	var detailWindow = Ti.UI.createWindow({
-		title: dataSource.title
+		title: this.title
 	});
-	// Uses the this keyword to pull the detail property from the for in loop
+	
 	var detailViewText = Ti.UI.createLabel({
-		text: dataSource.detail,
+		text: this.detail,
 		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
 		color: "#fff",
 		top: 20,
@@ -58,28 +58,23 @@ var showDetail = function(dataSource){
 };
 
 var lists = [];
-// Populate Section Headers & Footers
-for (var n in jsonData){ 
+
+for (var n in jsonData){ // Populate Section Headers & Footers
 	var tableSection = Ti.UI.createTableViewSection({
 		headerTitle: jsonData[n].headerText,
 		footerTitle: jsonData[n].footerText
 	});
-	// Send Variables outside the Loop so they won't get overwritten
-	lists.push(tableSection);
-	// Populate the Sections with Data
-	for (o in jsonData[n].tasks){ 
+	lists.push(tableSection);// Send Variables outside the Loop so they won't get overwritten
+	for (o in jsonData[n].tasks){ // Populate the Sections with Data
 		var sectionDetail = Ti.UI.createTableViewRow({
 			title: jsonData[n].tasks[o].task,
 			detail: jsonData[n].tasks[o].desc,
 			hasChild: true
 		});
 		tableSection.add(sectionDetail);
-		//sectionDetail.addEventListener("click", showDetail);
+		sectionDetail.addEventListener("click", showDetail);
 	};
 };
 
 tasks.setData(lists);
-tasks.addEventListener("click", function(event){
-	showDetail(event.source);
-});
 tableWindow.add(tasks);
