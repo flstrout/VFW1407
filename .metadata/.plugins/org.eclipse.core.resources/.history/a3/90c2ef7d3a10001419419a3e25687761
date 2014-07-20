@@ -17,7 +17,7 @@ var navWindow = Ti.UI.iOS.createNavigationWindow({
 });
 
 var buttonOpenGallery = Ti.UI.createView({
-	backgroundColor: "#0f0",
+	backgroundColor: "#f09",
 	borderRadius: 7,
 	borderWidth: 1,
 	borderColor: "#333",
