@@ -34,14 +34,6 @@ var labelOpenGallery = Ti.UI.createLabel({
 });
 
 var openGallery = function(){
-	var pWidth = Ti.Platform.displayCaps.platformWidth;
-	var pHeight = Ti.Platform.displayCaps.platformHeight;
-	var itemCount = 15;
-	var rowCount = 3;
-	var margin = 10;
-	var trueCanvasWidth = pWidth-((rowCount+1)*margin);
-	var size = trueCanvasWidth/rowCount;
-	
 	var galleryWindow = Ti.UI.createWindow({
 		title: "Gallery",
 		backgroundColor: "#000",
