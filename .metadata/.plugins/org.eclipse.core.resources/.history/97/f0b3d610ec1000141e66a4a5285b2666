@@ -40,33 +40,13 @@ var openGallery = function(){
 		backgroundImage: "diamondplate.jpg",
 		backgroundRepeat: true
 	});
-	
-	var buttonOpenImage = Ti.UI.createView({
-		backgroundColor: "#0f0",
-		borderRadius: 7,
-		borderWidth: 1,
-		borderColor: "#333",
-		height: 85,
-		width: 250,
-		align: "center"
-	});
-	galleryWindow.add(buttonOpenImage);
-	buttonOpenImage.addEventListener("click", openImage);
+	navWindow.openWindow(galleryWindow);
 	//var navWindow2 = Ti.UI.iOS.createNavigationWindow({
 		//window: galleryWindow
 	//});
-	navWindow.openWindow(galleryWindow);
+	//navWindow2.open();
 };
- var openImage = function(){
- 	var imageWindow = Ti.UI.createWindow({
-		title: "Image",
-		backgroundColor: "#000",
-		backgroundImage: "diamondplate.jpg",
-		backgroundRepeat: true
-	});
-	navWindow.openWindow(imageWindow);
- };
- 
+
 buttonOpenGallery.add(labelOpenGallery);
 buttonOpenGallery.addEventListener("click", openGallery);
 mainWindow.add(buttonOpenGallery);

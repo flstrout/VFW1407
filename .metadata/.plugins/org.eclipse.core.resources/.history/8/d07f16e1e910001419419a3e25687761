@@ -6,7 +6,7 @@
 Ti.UI.setBackgroundColor("#000");
 
 var mainWindow = Ti.UI.createWindow({
-	title: "Main",
+	title: "Menu",
 	backgroundColor: "#000",
 	backgroundImage: "diamondplate.jpg",
 	backgroundRepeat: true
@@ -40,34 +40,12 @@ var openGallery = function(){
 		backgroundImage: "diamondplate.jpg",
 		backgroundRepeat: true
 	});
-	
-	var buttonOpenImage = Ti.UI.createView({
-		backgroundColor: "#0f0",
-		borderRadius: 7,
-		borderWidth: 1,
-		borderColor: "#333",
-		height: 85,
-		width: 250,
-		align: "center"
+
+	var navWindow = Ti.UI.iOS.createNavigationWindow({
+		window: galleryWindow
 	});
-	galleryWindow.add(buttonOpenImage);
-	buttonOpenImage.addEventListener("click", openImage);
-	//var navWindow2 = Ti.UI.iOS.createNavigationWindow({
-		//window: galleryWindow
-	//});
-	navWindow.openWindow(galleryWindow);
+
 };
- var openImage = function(){
- 	var imageWindow = Ti.UI.createWindow({
-		title: "Image",
-		backgroundColor: "#000",
-		backgroundImage: "diamondplate.jpg",
-		backgroundRepeat: true
-	});
-	navWindow.openWindow(imageWindow);
- };
- 
 buttonOpenGallery.add(labelOpenGallery);
-buttonOpenGallery.addEventListener("click", openGallery);
 mainWindow.add(buttonOpenGallery);
 navWindow.open();

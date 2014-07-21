@@ -50,12 +50,11 @@ var openGallery = function(){
 		width: 250,
 		align: "center"
 	});
-	galleryWindow.add(buttonOpenImage);
 	buttonOpenImage.addEventListener("click", openImage);
-	//var navWindow2 = Ti.UI.iOS.createNavigationWindow({
-		//window: galleryWindow
-	//});
-	navWindow.openWindow(galleryWindow);
+	/*var navWindow2 = Ti.UI.iOS.createNavigationWindow({
+		window: galleryWindow
+	});*/
+	galleryWindow.open();
 };
  var openImage = function(){
  	var imageWindow = Ti.UI.createWindow({
@@ -64,7 +63,7 @@ var openGallery = function(){
 		backgroundImage: "diamondplate.jpg",
 		backgroundRepeat: true
 	});
-	navWindow.openWindow(imageWindow);
+	imageWindow.open();
  };
  
 buttonOpenGallery.add(labelOpenGallery);
