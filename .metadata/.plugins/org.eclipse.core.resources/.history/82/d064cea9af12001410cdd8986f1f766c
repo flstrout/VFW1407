@@ -1,0 +1,131 @@
+// Fred L. Strout
+// VFW-1 ~ 1407
+// Project 3 - Image Gallery
+// Created On: 7/20/2014
+
+Ti.UI.setBackgroundColor("#000");
+
+var mainWindow = Ti.UI.createWindow({
+	title: "Main",
+	backgroundColor: "#000",
+	backgroundImage: "diamondplate.jpg",
+	backgroundRepeat: true
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+var buttonOpenGallery = Ti.UI.createView({
+	backgroundColor: "#0f0",
+	borderRadius: 7,
+	borderWidth: 1,
+	borderColor: "#333",
+	height: 85,
+	width: 250,
+	align: "center"
+});
+
+var labelOpenGallery = Ti.UI.createLabel({
+	text: "Open Gallery",
+	font: {fontSize:24, fontFamily:"Arial", fontWeight:"bold"},
+	color: "#000",
+	alignText: "center"
+});
+
+// Opens the Gallery Window
+var openGallery = function(){
+	// Creates the image array from the "image" folder
+	var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
+	var myImages = gallery.getDirectoryListing();
+	var i = 0;
+	var j = myImages.length;
+	// Defines the UI elements
+	var pWidth = Ti.Platform.displayCaps.platformWidth;
+	var pHeight = Ti.Platform.displayCaps.platformHeight;
+	var itemCount = 30;
+	var rowCount = 3;
+	var margin = 10;
+	var trueCanvasWidth = pWidth-((rowCount+1)*margin);
+	var size = trueCanvasWidth/rowCount;
+	var radius = 3;
+	
+	var galleryWindow = Ti.UI.createWindow({
+		title: "Gallery",
+		backgroundColor: "#000"
+		//backgroundImage: "diamondplate.jpg",
+		//backgroundRepeat: true,
+		//layout: "horizontal",
+	});
+	
+	var galleryView = Ti.UI.createScrollView({
+		top: 0,
+		layout: "horizontal",
+		width: pWidth,
+		contentWidth: pWidth,
+		showVerticalScrollIndicator: true,
+		backgroundColor: "#000",
+		backgroundImage: "diamondplate.jpg",
+		backgroundRepeat: true
+	});
+	
+	galleryWindow.add(galleryView);
+	
+	for (i = 0; i<j; i++){
+		var thumbnails = Ti.UI.createView({
+			title: myImages[i],
+			backgroundColor: "#0f0",
+			top: margin,
+			left: margin,
+			width: size,
+			height: size,
+			borderRadius: radius
+		});
+		var thumbnailImage = Ti.UI.createImageView({
+			image: "images/" + myImages[i],
+			top: 0,
+			width: thumbnails.width*2.5
+		});
+		
+		thumbnails.add(thumbnailImage);
+		galleryView.add(thumbnails);
+	};
+	
+	galleryView.addEventListener("click", function(event){
+		console.log (event.source.image);
+		openImage(event.source.image);
+	});
+	navWindow.openWindow(galleryWindow);
+};
+
+ var openImage = function(dataSource){
+ 	var imageWindow = Ti.UI.createWindow({
+		title: dataSource,
+		backgroundColor: "#000",
+		backgroundImage: "diamondplate.jpg",
+		backgroundRepeat: true
+	});
+	var imageView = Ti.UI.createImageView({
+		image: dataSource,
+		top: 85,
+		left: 10,
+		right: 10,
+		borderRadius: 7,
+		height: 200
+	});
+	var imageLabel = Ti.UI.createLabel({
+		text: dataSource,
+		top: 55,
+		font: {fontSize:28, fontFamily:"Arial", fontWeight:"bold"},
+		color: "#fff",
+		alignText: "center"
+	});
+	
+	imageWindow.add(imageView, imageLabel);
+	navWindow.openWindow(imageWindow);
+ };
+ 
+buttonOpenGallery.add(labelOpenGallery);
+buttonOpenGallery.addEventListener("click", openGallery);
+mainWindow.add(buttonOpenGallery);
+navWindow.open();

@@ -4,6 +4,7 @@
 // Created On: 7/20/2014
 
 Ti.UI.setBackgroundColor("#000");
+var rowCount = 3;
 
 var mainWindow = Ti.UI.createWindow({
 	title: "Main",
@@ -16,44 +17,83 @@ var navWindow = Ti.UI.iOS.createNavigationWindow({
 	window: mainWindow
 });
 
-var buttonOpenGallery = Ti.UI.createView({
+var buttonOpenGallery3 = Ti.UI.createView({
 	backgroundColor: "#0f0",
 	borderRadius: 7,
 	borderWidth: 1,
 	borderColor: "#333",
+	top: 165,
 	height: 85,
 	width: 250,
-	align: "center"
+	align: "center",
+	across: 3 // Developer Defined Property to set the rowCount variable
 });
 
-var labelOpenGallery = Ti.UI.createLabel({
-	text: "Open Gallery",
-	font: {fontSize:24, fontFamily:"Arial", fontWeight:"bold"},
+var labelOpenGallery3 = Ti.UI.createLabel({
+	text: "3-Across Gallery",
+	font: {fontSize:22, fontFamily:"Arial", fontWeight:"bold"},
 	color: "#000",
 	alignText: "center"
 });
 
+var buttonOpenGallery4 = Ti.UI.createView({
+	backgroundColor: "#0cf",
+	borderRadius: 7,
+	borderWidth: 1,
+	borderColor: "#333",
+	top: buttonOpenGallery3.top + buttonOpenGallery3.height + 10,
+	height: 85,
+	width: 250,
+	align: "center",
+	across: 4 // Developer Defined Property to set the rowCount variable
+});
+
+var labelOpenGallery4 = Ti.UI.createLabel({
+	text: "4-Across Gallery",
+	font: {fontSize:22, fontFamily:"Arial", fontWeight:"bold"},
+	color: "#000",
+	alignText: "center"
+});
+
+// Opens the Gallery Window
 var openGallery = function(){
+	rowCount = this.across; // Pulls the Developer Defined Property from the Parent Object
+	// Creates the image array from the "image" folder
+	var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
+	var myImages = gallery.getDirectoryListing();
+	var i = 0;
+	var j = myImages.length;
+	// Defines the UI elements
 	var pWidth = Ti.Platform.displayCaps.platformWidth;
 	var pHeight = Ti.Platform.displayCaps.platformHeight;
 	var itemCount = 30;
-	var rowCount = 3;
+	//var rowCount = 3;
 	var margin = 10;
 	var trueCanvasWidth = pWidth-((rowCount+1)*margin);
 	var size = trueCanvasWidth/rowCount;
 	var radius = 3;
 	
 	var galleryWindow = Ti.UI.createWindow({
-		title: "Gallery",
-		backgroundColor: "#000",
-		backgroundImage: "diamondplate.jpg",
-		backgroundRepeat: true,
-		layout: "horizontal"
+		title: this.across + "-Across Gallery",
+		backgroundColor: "#000"
 	});
 	
-	for (var i = 0; i<itemCount; i++){
+	var galleryView = Ti.UI.createScrollView({
+		top: 0,
+		layout: "horizontal",
+		width: pWidth,
+		contentWidth: pWidth,
+		showVerticalScrollIndicator: true,
+		backgroundColor: "#000",
+		backgroundImage: "diamondplate.jpg",
+		backgroundRepeat: true
+	});
+	
+	galleryWindow.add(galleryView);
+	
+	for (i = 0; i<j; i++){
 		var thumbnails = Ti.UI.createView({
-			title: i+1,
+			title: myImages[i],
 			backgroundColor: "#0f0",
 			top: margin,
 			left: margin,
@@ -61,15 +101,19 @@ var openGallery = function(){
 			height: size,
 			borderRadius: radius
 		});
-		var numbers = Ti.UI.createLabel({
-			text: i+1,
-			color: "#000"
+		var thumbnailImage = Ti.UI.createImageView({
+			title: myImages[i],
+			image: "images/" + myImages[i],
+			top: 0,
+			width: thumbnails.width*2.5
 		});
-		thumbnails.add(numbers);
-		galleryWindow.add(thumbnails);
+		
+		thumbnails.add(thumbnailImage);
+		galleryView.add(thumbnails);
 	};
 	
-	galleryWindow.addEventListener("click", function(event){
+	galleryView.addEventListener("click", function(event){
+		console.log (event.source.title);
 		openImage(event.source);
 	});
 	navWindow.openWindow(galleryWindow);
@@ -77,32 +121,35 @@ var openGallery = function(){
 
  var openImage = function(dataSource){
  	var imageWindow = Ti.UI.createWindow({
-		title: "Image",
+		title: dataSource.title,
 		backgroundColor: "#000",
 		backgroundImage: "diamondplate.jpg",
 		backgroundRepeat: true
 	});
-	var image = Ti.UI.createView({
-		backgroundColor: "#0f0",
+	var imageView = Ti.UI.createImageView({
+		image: dataSource.image,
+		top: 100,
+		left: 10,
+		right: 10,
 		borderRadius: 7,
-		borderWidth: 1,
-		borderColor: "#333",
-		height: 85,
-		width: 250,
-		align: "center"
+		height: 200
 	});
 	var imageLabel = Ti.UI.createLabel({
 		text: dataSource.title,
-		font: {fontSize:24, fontFamily:"Arial", fontWeight:"bold"},
-		color: "#000",
-		alignText: "center"
+		top: imageView.top-30,
+		font: {fontSize:22, fontFamily:"Arial", fontWeight:"bold"},
+		color: "#fff",
+		alignText: "bottom"
 	});
-	image.add(imageLabel);
-	imageWindow.add(image);
+	
+	imageWindow.add(imageView, imageLabel);
 	navWindow.openWindow(imageWindow);
  };
  
-buttonOpenGallery.add(labelOpenGallery);
-buttonOpenGallery.addEventListener("click", openGallery);
-mainWindow.add(buttonOpenGallery);
+buttonOpenGallery3.add(labelOpenGallery3);
+buttonOpenGallery3.addEventListener("click", openGallery);
+buttonOpenGallery4.add(labelOpenGallery4);
+buttonOpenGallery4.addEventListener("click", openGallery);
+mainWindow.add(buttonOpenGallery3);
+mainWindow.add(buttonOpenGallery4);
 navWindow.open();
