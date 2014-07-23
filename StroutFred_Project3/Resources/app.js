@@ -36,20 +36,53 @@ var labelOpenGallery = Ti.UI.createLabel({
 var openGallery = function(){
 	var pWidth = Ti.Platform.displayCaps.platformWidth;
 	var pHeight = Ti.Platform.displayCaps.platformHeight;
-	var itemCount = 15;
+	var itemCount = 30;
 	var rowCount = 3;
 	var margin = 10;
 	var trueCanvasWidth = pWidth-((rowCount+1)*margin);
 	var size = trueCanvasWidth/rowCount;
+	var radius = 3;
 	
 	var galleryWindow = Ti.UI.createWindow({
 		title: "Gallery",
 		backgroundColor: "#000",
 		backgroundImage: "diamondplate.jpg",
-		backgroundRepeat: true
+		backgroundRepeat: true,
+		layout: "horizontal"
 	});
 	
-	var buttonOpenImage = Ti.UI.createView({
+	for (var i = 0; i<itemCount; i++){
+		var thumbnails = Ti.UI.createView({
+			title: i+1,
+			backgroundColor: "#0f0",
+			top: margin,
+			left: margin,
+			width: size,
+			height: size,
+			borderRadius: radius
+		});
+		var numbers = Ti.UI.createLabel({
+			text: i+1,
+			color: "#000"
+		});
+		thumbnails.add(numbers);
+		galleryWindow.add(thumbnails);
+	};
+	
+	galleryWindow.addEventListener("click", function(event){
+		openImage(event.source);
+	});
+	navWindow.openWindow(galleryWindow);
+};
+
+ var openImage = function(dataSource){
+ 	var imageWindow = Ti.UI.createWindow({
+		title: "Image",
+		backgroundColor: "#000",
+		backgroundImage: "diamondplate.jpg",
+		backgroundRepeat: true
+	});
+	var image = Ti.UI.createView({
 		backgroundColor: "#0f0",
 		borderRadius: 7,
 		borderWidth: 1,
@@ -58,20 +91,14 @@ var openGallery = function(){
 		width: 250,
 		align: "center"
 	});
-	galleryWindow.add(buttonOpenImage);
-	buttonOpenImage.addEventListener("click", openImage);
-	//var navWindow2 = Ti.UI.iOS.createNavigationWindow({
-		//window: galleryWindow
-	//});
-	navWindow.openWindow(galleryWindow);
-};
- var openImage = function(){
- 	var imageWindow = Ti.UI.createWindow({
-		title: "Image",
-		backgroundColor: "#000",
-		backgroundImage: "diamondplate.jpg",
-		backgroundRepeat: true
+	var imageLabel = Ti.UI.createLabel({
+		text: dataSource.title,
+		font: {fontSize:24, fontFamily:"Arial", fontWeight:"bold"},
+		color: "#000",
+		alignText: "center"
 	});
+	image.add(imageLabel);
+	imageWindow.add(image);
 	navWindow.openWindow(imageWindow);
  };
  

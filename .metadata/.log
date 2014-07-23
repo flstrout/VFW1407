@@ -22447,3 +22447,168 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstro
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
 !SUBENTRY 1 org.eclipse.ui 2 0 2014-07-21 10:22:14.808
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+!SESSION 2014-07-21 23:42:52.516 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/fredstrout/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstrout/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-07-21 23:42:54.147
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-07-21 23:42:54.263
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-21 23:42:54.264
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-21 23:42:54.264
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+
+!ENTRY org.eclipse.osgi 2 1 2014-07-21 23:43:02.997
+!MESSAGE NLS unused message: MobileUIPlugin_DefaultProjectTemplate_Description in: com.appcelerator.titanium.ios.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-07-21 23:43:03.000
+!MESSAGE NLS unused message: MobileUIPlugin_DefaultProjectTemplate_Name in: com.appcelerator.titanium.ios.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-07-21 23:43:03.000
+!MESSAGE NLS unused message: MobileUIPlugin_mobileUIInitializationJobName in: com.appcelerator.titanium.ios.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-07-21 23:43:03.000
+!MESSAGE NLS unused message: AdhocHandler_sdk_compatibility_title in: com.appcelerator.titanium.ios.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-07-21 23:43:03.000
+!MESSAGE NLS unused message: DistributeWizard_ErrorDialogTitle in: com.appcelerator.titanium.ios.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-07-21 23:43:03.000
+!MESSAGE NLS unused message: DistributeWizard_LaunchConfigurationFailed_Error in: com.appcelerator.titanium.ios.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-07-21 23:43:03.000
+!MESSAGE NLS unused message: IOSConfigurationMessages_TestOnDevice_Desc in: com.appcelerator.titanium.ios.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-07-21 23:43:03.001
+!MESSAGE NLS unused message: IOSConfigurationMessages_TestOnDevice_Title in: com.appcelerator.titanium.ios.ui.messages
+!SESSION 2014-07-22 10:31:11.733 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/fredstrout/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstrout/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-07-22 10:31:13.277
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-07-22 10:31:13.389
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-22 10:31:13.389
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-22 10:31:13.389
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+!SESSION 2014-07-22 23:41:13.469 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/fredstrout/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstrout/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-07-22 23:41:15.567
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-07-22 23:41:15.721
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-22 23:41:15.721
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-22 23:41:15.721
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+!SESSION 2014-07-23 00:10:57.322 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/fredstrout/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstrout/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-07-23 00:10:58.999
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-07-23 00:10:59.135
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-23 00:10:59.135
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-23 00:10:59.135
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+!SESSION 2014-07-23 02:40:32.152 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/fredstrout/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstrout/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-07-23 02:40:33.816
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-07-23 02:40:33.938
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-23 02:40:33.939
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-23 02:40:33.939
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+
+!ENTRY org.eclipse.ui.workbench 4 2 2014-07-23 02:40:49.422
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.NullPointerException
+	at com.appcelerator.titanium.core.mobile.TitaniumMobileSDKLocator.getInstance(TitaniumMobileSDKLocator.java:147)
+	at com.appcelerator.titanium.update.core.release.TitaniumSDKRelease.isInstalled(TitaniumSDKRelease.java:75)
+	at com.appcelerator.titanium.update.core.TitaniumSDKUpdater$NotInstalledFilter.include(TitaniumSDKUpdater.java:125)
+	at com.appcelerator.titanium.update.core.TitaniumSDKUpdater$NotInstalledFilter.include(TitaniumSDKUpdater.java:1)
+	at com.aptana.core.util.CollectionsUtil.filter(CollectionsUtil.java:157)
+	at com.aptana.core.util.CollectionsUtil.filter(CollectionsUtil.java:219)
+	at com.appcelerator.titanium.update.core.TitaniumSDKUpdater.hasToInstallPackages(TitaniumSDKUpdater.java:817)
+	at com.appcelerator.titanium.update.ui.TitaniumUpdateStartup.earlyStartup(TitaniumUpdateStartup.java:149)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2555)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ui 4 4 2014-07-23 02:40:49.425
+!MESSAGE Unhandled Exception
+
+!ENTRY com.appcelerator.titanium.update.ui 4 0 2014-07-23 02:40:49.425
+!MESSAGE Unable to execute early startup code for an extension
+!STACK 0
+java.lang.NullPointerException
+	at com.appcelerator.titanium.core.mobile.TitaniumMobileSDKLocator.getInstance(TitaniumMobileSDKLocator.java:147)
+	at com.appcelerator.titanium.update.core.release.TitaniumSDKRelease.isInstalled(TitaniumSDKRelease.java:75)
+	at com.appcelerator.titanium.update.core.TitaniumSDKUpdater$NotInstalledFilter.include(TitaniumSDKUpdater.java:125)
+	at com.appcelerator.titanium.update.core.TitaniumSDKUpdater$NotInstalledFilter.include(TitaniumSDKUpdater.java:1)
+	at com.aptana.core.util.CollectionsUtil.filter(CollectionsUtil.java:157)
+	at com.aptana.core.util.CollectionsUtil.filter(CollectionsUtil.java:219)
+	at com.appcelerator.titanium.update.core.TitaniumSDKUpdater.hasToInstallPackages(TitaniumSDKUpdater.java:817)
+	at com.appcelerator.titanium.update.ui.TitaniumUpdateStartup.earlyStartup(TitaniumUpdateStartup.java:149)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2555)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SESSION 2014-07-23 13:29:05.817 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/fredstrout/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstrout/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-07-23 13:29:07.513
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-07-23 13:29:07.624
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-23 13:29:07.624
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-23 13:29:07.624
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
