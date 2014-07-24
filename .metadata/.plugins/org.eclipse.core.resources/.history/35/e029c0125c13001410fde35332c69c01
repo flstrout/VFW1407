@@ -120,7 +120,7 @@ var openGallery = function(){
 	var exitGallery = Ti.UI.createView({
 		backgroundColor: "#999",
 		top: pHeight-100,
-		height: 40
+		height: 35
 	});
 	
 	var exitGalleryLabel = Ti.UI.createLabel({
@@ -166,7 +166,7 @@ var openGallery = function(){
 	var exitImage = Ti.UI.createView({
 		backgroundColor: "#999",
 		top: pHeight-100,
-		height: 40
+		height: 35
 	});
 	
 	var exitImageLabel = Ti.UI.createLabel({

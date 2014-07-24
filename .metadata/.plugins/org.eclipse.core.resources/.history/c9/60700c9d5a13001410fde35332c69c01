@@ -116,31 +116,10 @@ var openGallery = function(){
 		console.log (event.source.title);
 		openImage(event.source);
 	});
-	
-	var exitGallery = Ti.UI.createView({
-		backgroundColor: "#999",
-		top: pHeight-100,
-		height: 40
-	});
-	
-	var exitGalleryLabel = Ti.UI.createLabel({
-		text: "Close",
-		font: {fontSize: 22, fontFamily: "Arial", fontWeight: "bold"},
-		textAlign: "center"
-	});
-	
-	var closeGalleryWindow = function(){
-		galleryWindow.close();
-	};
-	
-	exitGallery.addEventListener("click", closeGalleryWindow);
-	exitGallery.add(exitGalleryLabel);
-	galleryWindow.add(exitGallery);
 	navWindow.openWindow(galleryWindow);
 };
 
  var openImage = function(dataSource){
- 	var pHeight = Ti.Platform.displayCaps.platformHeight;
  	var imageWindow = Ti.UI.createWindow({
 		title: dataSource.title,
 		backgroundColor: "#000",
@@ -165,8 +144,8 @@ var openGallery = function(){
 	
 	var exitImage = Ti.UI.createView({
 		backgroundColor: "#999",
-		top: pHeight-100,
-		height: 40
+		top: Ti.Platform.displayCaps.platformHeight - 35,
+		height: 35
 	});
 	
 	var exitImageLabel = Ti.UI.createLabel({
@@ -175,10 +154,10 @@ var openGallery = function(){
 		textAlign: "center"
 	});
 	
-	var closeImageWindow = function(){
+	var closeWindow = function(){
 		imageWindow.close();
 	};
-	exitImage.addEventListener("click", closeImageWindow);
+	exitImage.addEventListener("click", closeWindow);
 	exitImage.add(exitImageLabel);
 	imageWindow.add(imageView, imageLabel, exitImage);
 	navWindow.openWindow(imageWindow);

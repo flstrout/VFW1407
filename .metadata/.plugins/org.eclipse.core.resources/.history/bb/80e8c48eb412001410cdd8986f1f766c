@@ -30,7 +30,7 @@ var buttonOpenGallery3 = Ti.UI.createView({
 });
 
 var labelOpenGallery3 = Ti.UI.createLabel({
-	text: buttonOpenGallery3.across+"-Across Gallery", // Label updates automatically with the across property
+	text: "Open 3 Across Gallery",
 	font: {fontSize:22, fontFamily:"Arial", fontWeight:"bold"},
 	color: "#000",
 	alignText: "center"
@@ -41,7 +41,7 @@ var buttonOpenGallery4 = Ti.UI.createView({
 	borderRadius: 7,
 	borderWidth: 1,
 	borderColor: "#333",
-	top: buttonOpenGallery3.top + buttonOpenGallery3.height + 10,
+	top: buttonOpenGallery3.top + buttonOpenGallery3.height + 15,
 	height: 85,
 	width: 250,
 	align: "center",
@@ -49,7 +49,7 @@ var buttonOpenGallery4 = Ti.UI.createView({
 });
 
 var labelOpenGallery4 = Ti.UI.createLabel({
-	text: buttonOpenGallery4.across+"-Across Gallery", // Label updates automatically with the across property
+	text: "Open 4 Across Gallery",
 	font: {fontSize:22, fontFamily:"Arial", fontWeight:"bold"},
 	color: "#000",
 	alignText: "center"
@@ -74,7 +74,7 @@ var openGallery = function(){
 	var radius = 3;
 	
 	var galleryWindow = Ti.UI.createWindow({
-		title: this.across + "-Across Gallery",
+		title: "Gallery",
 		backgroundColor: "#000"
 	});
 	
@@ -116,31 +116,10 @@ var openGallery = function(){
 		console.log (event.source.title);
 		openImage(event.source);
 	});
-	
-	var exitGallery = Ti.UI.createView({
-		backgroundColor: "#999",
-		top: pHeight-100,
-		height: 40
-	});
-	
-	var exitGalleryLabel = Ti.UI.createLabel({
-		text: "Close",
-		font: {fontSize: 22, fontFamily: "Arial", fontWeight: "bold"},
-		textAlign: "center"
-	});
-	
-	var closeGalleryWindow = function(){
-		galleryWindow.close();
-	};
-	
-	exitGallery.addEventListener("click", closeGalleryWindow);
-	exitGallery.add(exitGalleryLabel);
-	galleryWindow.add(exitGallery);
 	navWindow.openWindow(galleryWindow);
 };
 
  var openImage = function(dataSource){
- 	var pHeight = Ti.Platform.displayCaps.platformHeight;
  	var imageWindow = Ti.UI.createWindow({
 		title: dataSource.title,
 		backgroundColor: "#000",
@@ -160,27 +139,10 @@ var openGallery = function(){
 		top: imageView.top-30,
 		font: {fontSize:22, fontFamily:"Arial", fontWeight:"bold"},
 		color: "#fff",
-		textAlign: "center"
+		alignText: "bottom"
 	});
 	
-	var exitImage = Ti.UI.createView({
-		backgroundColor: "#999",
-		top: pHeight-100,
-		height: 40
-	});
-	
-	var exitImageLabel = Ti.UI.createLabel({
-		text: "Close",
-		font: {fontSize: 22, fontFamily: "Arial", fontWeight: "bold"},
-		textAlign: "center"
-	});
-	
-	var closeImageWindow = function(){
-		imageWindow.close();
-	};
-	exitImage.addEventListener("click", closeImageWindow);
-	exitImage.add(exitImageLabel);
-	imageWindow.add(imageView, imageLabel, exitImage);
+	imageWindow.add(imageView, imageLabel);
 	navWindow.openWindow(imageWindow);
  };
  
