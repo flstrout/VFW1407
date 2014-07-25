@@ -3,10 +3,61 @@
 // Project 3 - Image Gallery
 // Created On: 7/20/2014
 
-// Opens the Gallery - Contains the code to open the Window that contains the Image View <= Could make it a separate js file - trying to keep it K.I.S.S.
+Ti.UI.setBackgroundColor("#000");
+var rowCount = 3;
+
+var mainWindow = Ti.UI.createWindow({
+	title: "Main",
+	backgroundColor: "#000",
+	backgroundImage: "diamondplate.jpg",
+	backgroundRepeat: true
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+var buttonOpenGallery3 = Ti.UI.createView({
+	backgroundColor: "#0f0",
+	borderRadius: 7,
+	borderWidth: 1,
+	borderColor: "#333",
+	top: 165,
+	height: 85,
+	width: 250,
+	align: "center",
+	across: 3 // Developer Defined Property to set the rowCount variable
+});
+
+var labelOpenGallery3 = Ti.UI.createLabel({
+	text: buttonOpenGallery3.across+"-Across Gallery", // Label updates automatically with the across property
+	font: {fontSize:22, fontFamily:"Arial", fontWeight:"bold"},
+	color: "#000",
+	alignText: "center"
+});
+
+var buttonOpenGallery4 = Ti.UI.createView({
+	backgroundColor: "#0cf",
+	borderRadius: 7,
+	borderWidth: 1,
+	borderColor: "#333",
+	top: buttonOpenGallery3.top + buttonOpenGallery3.height + 10,
+	height: 85,
+	width: 250,
+	align: "center",
+	across: 4 // Developer Defined Property to set the rowCount variable
+});
+
+var labelOpenGallery4 = Ti.UI.createLabel({
+	text: buttonOpenGallery4.across+"-Across Gallery", // Label updates automatically with the across property
+	font: {fontSize:22, fontFamily:"Arial", fontWeight:"bold"},
+	color: "#000",
+	alignText: "center"
+});
+
+// Opens the Gallery Window
 var openGallery = function(){
-	// Declare Variables
-	var rowCount = this.across; // Pulls the Developer Defined Property from the Parent Object
+	rowCount = this.across; // Pulls the Developer Defined Property from the Parent Object
 	// Creates the image array from the "image" folder
 	var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
 	var myImages = gallery.getDirectoryListing();
@@ -16,13 +67,12 @@ var openGallery = function(){
 	var pWidth = Ti.Platform.displayCaps.platformWidth;
 	var pHeight = Ti.Platform.displayCaps.platformHeight;
 	var itemCount = 30;
-	// var rowCount = 3; => no longer used thanks to the 'across' custom property
+	//var rowCount = 3;
 	var margin = 10;
 	var trueCanvasWidth = pWidth-((rowCount+1)*margin);
 	var size = trueCanvasWidth/rowCount;
 	var radius = 3;
 	
-	// Create the Gallery Window
 	var galleryWindow = Ti.UI.createWindow({
 		title: this.across + "-Across Gallery",
 		backgroundColor: "#000"
@@ -38,9 +88,9 @@ var openGallery = function(){
 		backgroundImage: "diamondplate.jpg",
 		backgroundRepeat: true
 	});
+	
 	galleryWindow.add(galleryView);
 	
-	// Populate the Gallery with images from the images folder
 	for (i = 0; i<j; i++){
 		var thumbnails = Ti.UI.createView({
 			title: myImages[i],
@@ -62,13 +112,11 @@ var openGallery = function(){
 		galleryView.add(thumbnails);
 	};
 	
-	// Creates an Event Listener using event propogation
 	galleryView.addEventListener("click", function(event){
 		// console.log (event.source.title);
 		openImage(event.source);
 	});
 	
-	// Creates a close button for the Gallery Window
 	var exitGallery = Ti.UI.createView({
 		backgroundColor: "#999",
 		top: pHeight-100,
@@ -91,7 +139,6 @@ var openGallery = function(){
 	navWindow.openWindow(galleryWindow);
 };
 
-// Creates a New Window for displaying the selected Image
  var openImage = function(dataSource){
  	var pHeight = Ti.Platform.displayCaps.platformHeight;
  	var imageWindow = Ti.UI.createWindow({
@@ -116,7 +163,6 @@ var openGallery = function(){
 		textAlign: "center"
 	});
 	
-	// Creates a close button for the Image Window
 	var exitImage = Ti.UI.createView({
 		backgroundColor: "#999",
 		top: pHeight-100,
@@ -142,3 +188,6 @@ buttonOpenGallery3.add(labelOpenGallery3);
 buttonOpenGallery3.addEventListener("click", openGallery);
 buttonOpenGallery4.add(labelOpenGallery4);
 buttonOpenGallery4.addEventListener("click", openGallery);
+mainWindow.add(buttonOpenGallery3);
+mainWindow.add(buttonOpenGallery4);
+navWindow.open();

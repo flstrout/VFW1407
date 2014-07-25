@@ -1,11 +1,4 @@
-// Fred L. Strout
-// VFW-1 ~ 1407
-// Project 3 - Image Gallery
-// Created On: 7/20/2014
-
-// Opens the Gallery - Contains the code to open the Window that contains the Image View <= Could make it a separate js file - trying to keep it K.I.S.S.
 var openGallery = function(){
-	// Declare Variables
 	var rowCount = this.across; // Pulls the Developer Defined Property from the Parent Object
 	// Creates the image array from the "image" folder
 	var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
@@ -16,13 +9,12 @@ var openGallery = function(){
 	var pWidth = Ti.Platform.displayCaps.platformWidth;
 	var pHeight = Ti.Platform.displayCaps.platformHeight;
 	var itemCount = 30;
-	// var rowCount = 3; => no longer used thanks to the 'across' custom property
+	//var rowCount = 3;
 	var margin = 10;
 	var trueCanvasWidth = pWidth-((rowCount+1)*margin);
 	var size = trueCanvasWidth/rowCount;
 	var radius = 3;
 	
-	// Create the Gallery Window
 	var galleryWindow = Ti.UI.createWindow({
 		title: this.across + "-Across Gallery",
 		backgroundColor: "#000"
@@ -38,9 +30,9 @@ var openGallery = function(){
 		backgroundImage: "diamondplate.jpg",
 		backgroundRepeat: true
 	});
+	
 	galleryWindow.add(galleryView);
 	
-	// Populate the Gallery with images from the images folder
 	for (i = 0; i<j; i++){
 		var thumbnails = Ti.UI.createView({
 			title: myImages[i],
@@ -62,13 +54,11 @@ var openGallery = function(){
 		galleryView.add(thumbnails);
 	};
 	
-	// Creates an Event Listener using event propogation
 	galleryView.addEventListener("click", function(event){
 		// console.log (event.source.title);
 		openImage(event.source);
 	});
 	
-	// Creates a close button for the Gallery Window
 	var exitGallery = Ti.UI.createView({
 		backgroundColor: "#999",
 		top: pHeight-100,
@@ -91,7 +81,6 @@ var openGallery = function(){
 	navWindow.openWindow(galleryWindow);
 };
 
-// Creates a New Window for displaying the selected Image
  var openImage = function(dataSource){
  	var pHeight = Ti.Platform.displayCaps.platformHeight;
  	var imageWindow = Ti.UI.createWindow({
@@ -116,7 +105,6 @@ var openGallery = function(){
 		textAlign: "center"
 	});
 	
-	// Creates a close button for the Image Window
 	var exitImage = Ti.UI.createView({
 		backgroundColor: "#999",
 		top: pHeight-100,
