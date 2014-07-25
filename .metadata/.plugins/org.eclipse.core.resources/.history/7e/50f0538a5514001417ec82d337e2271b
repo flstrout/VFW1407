@@ -140,5 +140,5 @@ var openGallery = function(){
  
 buttonOpenGallery3.add(labelOpenGallery3);
 buttonOpenGallery3.addEventListener("click", openGallery);
-buttonOpenGallery4.add(labelOpenGallery4);
-buttonOpenGallery4.addEventListener("click", openGallery);
+// buttonOpenGallery4.add(labelOpenGallery4);
+// buttonOpenGallery4.addEventListener("click", openGallery);
