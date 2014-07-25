@@ -4,6 +4,7 @@
 // Created On: 7/20/2014
 
 Ti.UI.setBackgroundColor("#000");
+var rowCount = 3;
 
 var mainWindow = Ti.UI.createWindow({
 	title: "Main",
@@ -56,7 +57,7 @@ var labelOpenGallery4 = Ti.UI.createLabel({
 
 // Opens the Gallery Window
 var openGallery = function(){
-	var rowCount = this.across; // Pulls the Developer Defined Property from the Parent Object
+	rowCount = this.across; // Pulls the Developer Defined Property from the Parent Object
 	// Creates the image array from the "image" folder
 	var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
 	var myImages = gallery.getDirectoryListing();
@@ -112,7 +113,7 @@ var openGallery = function(){
 	};
 	
 	galleryView.addEventListener("click", function(event){
-		// console.log (event.source.title);
+		console.log (event.source.title);
 		openImage(event.source);
 	});
 	
