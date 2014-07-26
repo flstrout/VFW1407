@@ -16,7 +16,7 @@
 		<item value="185" key="DIALOG_Y_ORIGIN"/>
 		<item value="318" key="DIALOG_X_ORIGIN"/>
 		<item value="354" key="DIALOG_HEIGHT"/>
-		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
 	</section>
 	<section name="com.aptana.ui.dialogs.ProjectContentsLocationArea">
 		<item value="/Users/fredstrout/Documents/Full Sail/VFW-I/JSON example" key="OUTSIDE_LOCATION"/>

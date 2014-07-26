@@ -22978,3 +22978,40 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstro
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
 !SUBENTRY 1 org.eclipse.ui 2 0 2014-07-25 17:56:50.771
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+!SESSION 2014-07-26 14:32:42.932 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/fredstrout/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstrout/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-07-26 14:32:45.086
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-07-26 14:32:45.232
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-26 14:32:45.232
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-26 14:32:45.232
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+
+!ENTRY org.eclipse.core.jobs 2 2 2014-07-26 14:34:33.729
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.appcelerator.titanium.android.core.AndroidSDKLocator$1
+!SESSION 2014-07-26 14:40:28.219 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/fredstrout/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/fredstrout/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-07-26 14:40:29.696
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-07-26 14:40:29.807
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-26 14:40:29.807
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-26 14:40:29.807
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'

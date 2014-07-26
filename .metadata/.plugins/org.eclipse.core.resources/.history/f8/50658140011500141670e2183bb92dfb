@@ -1,0 +1,40 @@
+// Fred L. Strout
+// VFW-1 ~ 1407
+// Project 3 - Image Gallery
+// Created On: 7/20/2014
+
+Titanium.UI.setBackgroundColor('#000');
+
+var menuWindow = Ti.UI.createWindow({
+	title: "Menu"
+});
+
+var banner = Ti.UI.createLabel({
+	text: "Top Assassin",
+	font: {fontSize: 28, fontFamily: "AmericanTypewriter", fontWeight: "bold"},
+	color: "#f00",
+	textAlign: "center",
+	top: 20,
+	height: 30,
+	width: "100%"
+});
+
+var logo = Ti.UI.createImageView({
+	top: banner.top + banner.height + 15,
+	image: "EagleLogo.bmp",
+	height: 240
+});
+
+var assetsButton = Ti.UI.createLabel({
+	backgroundColor: "#f09",
+	text: "Assets",
+	font: {fontSize: 22, fontFamily: "Arial", fontWeight: "bold"},
+	color: "#000",
+	textAlign: "center",
+	top: logo.top + logo.height + 30,
+	height: 75,
+	width: "100%"
+});
+
+menuWindow.add(banner, logo, assetsButton);
+menuWindow.open();
