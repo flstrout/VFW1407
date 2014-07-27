@@ -6,59 +6,46 @@
 // Data
 var jsonData = {
 	"listA":{
-		"headerText": "American Operatives",
+		"headerText": "American Operators",
 		"footerText": "These Operatives are American",
 		"tasks": [
 			{
 				"task": "Bourne, Jason",
-				"desc": "Treadstone Asset",
-				"image": "JasonBourne.jpg"
+				"desc": "Treadstone Asset."
 			},
 			{
 				"task": "Cross, Aaron",
-				"desc": "Outcome Asset",
-				"image": "AaronCross.jpg"
+				"desc": "Outcome Asset"
 			},
 			{
 				"task": "Rath, Robert",
-				"desc": "Contact Hitman",
-				"image": "RobertRath.jpg"
+				"desc": "Contact Hitman"
 			},
 			{
 				"task": "Hayward, Maggie",
-				"desc": "Ultra Secret Kill Squad Asset",
-				"image": "MaggieHayward.jpg"
+				"desc": "Secret Agency Asset"
 			},
 			{
 				"task": "Blank, Martin",
-				"desc": "Contract Hitman",
-				"image": "MartinBlank.jpg"
+				"desc": "Contract Hitman"
 			}
 		]
 	},
 	"listB":{
-		"headerText": "Foreign Operatives",
+		"headerText": "Foreign Operators",
 		"footerText": "These Operatives are not American",
 		"tasks": [
 			{
 				"task": "Connery, Sean",
-				"desc": "Agent 007 (a)",
-				"image": "SeanConnery.jpg"
-			},
-			{
-				"task": "Moore, Roger",
-				"desc": "Agent 007 (c)",
-				"image": "RogerMoore.jpg"
+				"desc": "Agent 007a"
 			},
 			{
 				"task": "Brosnan, Pierce",
-				"desc": "Agent 007 (e)",
-				"image": "PierceBrosnan.jpg"
+				"desc": "Agent 007e"
 			},
 			{
 				"task": "Craig, Daniel",
-				"desc": "Agent 007 (f)",
-				"image": "DanielCraig.jpg"
+				"desc": "Agent 007f"
 			},
 		]
 	}
@@ -68,7 +55,7 @@ var openAgents = function(){
 	
 	// New Window => Navigation Window
 	var tableWindow = Ti.UI.createWindow({
-		title: "Dossiers",
+		title: "Operatives",
 		backgroundColor: "#000"
 	});
 	
@@ -86,32 +73,16 @@ var openAgents = function(){
 			backgroundColor: "#000"
 		});
 		
-		// Uses the dataSource property to get data from the for in loop
-		var imgContainer = Ti.UI.createView({
-			backgroundColor: "#333",
-			borderRadius: 4,
-			top: 10,
-			left: 10,
-			width: 140,
-			height: 210
-		});
-		
-		var dossierImage = Ti.UI.createImageView({
-			image: "operatives/" + dataSource.image,
-			top: 0,
-			width: imgContainer*2
-		});
-		
+		// Uses the this keyword to pull the detail property from the for in loop
 		var detailViewText = Ti.UI.createLabel({
 			text: dataSource.detail,
 			font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
 			color: "#fff",
-			top: 220,
+			top: 20,
 			left: 10,
 			right: 10
 		});
-		imgContainer.add(dossierImage);
-		detailWindow.add(imgContainer, detailViewText);
+		detailWindow.add(detailViewText);
 		navWindow.openWindow(detailWindow);
 	};
 	
@@ -129,7 +100,6 @@ var openAgents = function(){
 			var sectionDetail = Ti.UI.createTableViewRow({
 				title: jsonData[n].tasks[o].task,
 				detail: jsonData[n].tasks[o].desc,
-				image: jsonData[n].tasks[o].image,
 				hasChild: true
 			});
 			tableSection.add(sectionDetail);

@@ -34,7 +34,7 @@ var logo = Ti.UI.createImageView({
 // Buttons
 var agentsButton = Ti.UI.createLabel({
 	backgroundColor: "#d00",
-	text: "Dossiers",
+	text: "Operatives",
 	font: {fontSize: 28, fontFamily: "Arial", fontWeight: "bold"},
 	color: "#000",
 	textAlign: "center",

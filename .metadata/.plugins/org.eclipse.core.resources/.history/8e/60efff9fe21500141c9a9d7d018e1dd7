@@ -11,7 +11,7 @@ var jsonData = {
 		"tasks": [
 			{
 				"task": "Bourne, Jason",
-				"desc": "Treadstone Asset",
+				"desc": "Treadstone Asset.",
 				"image": "JasonBourne.jpg"
 			},
 			{
@@ -26,13 +26,13 @@ var jsonData = {
 			},
 			{
 				"task": "Hayward, Maggie",
-				"desc": "Ultra Secret Kill Squad Asset",
+				"desc": "Secret Agency Asset",
 				"image": "MaggieHayward.jpg"
 			},
 			{
 				"task": "Blank, Martin",
 				"desc": "Contract Hitman",
-				"image": "MartinBlank.jpg"
+				"image": "MartinBlank"
 			}
 		]
 	},
@@ -68,7 +68,7 @@ var openAgents = function(){
 	
 	// New Window => Navigation Window
 	var tableWindow = Ti.UI.createWindow({
-		title: "Dossiers",
+		title: "Operatives",
 		backgroundColor: "#000"
 	});
 	
@@ -87,31 +87,23 @@ var openAgents = function(){
 		});
 		
 		// Uses the dataSource property to get data from the for in loop
-		var imgContainer = Ti.UI.createView({
-			backgroundColor: "#333",
-			borderRadius: 4,
-			top: 10,
-			left: 10,
-			width: 140,
-			height: 210
-		});
-		
 		var dossierImage = Ti.UI.createImageView({
-			image: "operatives/" + dataSource.image,
 			top: 0,
-			width: imgContainer*2
+			left: 10,
+			width: 34,
+			height: 100,
+			image: "operatives/" + dataSource.image
 		});
 		
 		var detailViewText = Ti.UI.createLabel({
 			text: dataSource.detail,
 			font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
 			color: "#fff",
-			top: 220,
+			top: 20,
 			left: 10,
 			right: 10
 		});
-		imgContainer.add(dossierImage);
-		detailWindow.add(imgContainer, detailViewText);
+		detailWindow.add(detailViewText);
 		navWindow.openWindow(detailWindow);
 	};
 	
@@ -129,7 +121,6 @@ var openAgents = function(){
 			var sectionDetail = Ti.UI.createTableViewRow({
 				title: jsonData[n].tasks[o].task,
 				detail: jsonData[n].tasks[o].desc,
-				image: jsonData[n].tasks[o].image,
 				hasChild: true
 			});
 			tableSection.add(sectionDetail);

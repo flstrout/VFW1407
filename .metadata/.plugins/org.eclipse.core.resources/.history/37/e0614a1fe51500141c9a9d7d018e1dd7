@@ -11,7 +11,7 @@ var jsonData = {
 		"tasks": [
 			{
 				"task": "Bourne, Jason",
-				"desc": "Treadstone Asset",
+				"desc": "Treadstone Asset.",
 				"image": "JasonBourne.jpg"
 			},
 			{
@@ -26,7 +26,7 @@ var jsonData = {
 			},
 			{
 				"task": "Hayward, Maggie",
-				"desc": "Ultra Secret Kill Squad Asset",
+				"desc": "Secret Agency Asset",
 				"image": "MaggieHayward.jpg"
 			},
 			{
@@ -68,7 +68,7 @@ var openAgents = function(){
 	
 	// New Window => Navigation Window
 	var tableWindow = Ti.UI.createWindow({
-		title: "Dossiers",
+		title: "Operatives",
 		backgroundColor: "#000"
 	});
 	
@@ -97,9 +97,7 @@ var openAgents = function(){
 		});
 		
 		var dossierImage = Ti.UI.createImageView({
-			image: "operatives/" + dataSource.image,
-			top: 0,
-			width: imgContainer*2
+			image: "operatives/" + dataSource.image
 		});
 		
 		var detailViewText = Ti.UI.createLabel({
@@ -129,7 +127,6 @@ var openAgents = function(){
 			var sectionDetail = Ti.UI.createTableViewRow({
 				title: jsonData[n].tasks[o].task,
 				detail: jsonData[n].tasks[o].desc,
-				image: jsonData[n].tasks[o].image,
 				hasChild: true
 			});
 			tableSection.add(sectionDetail);
