@@ -11,7 +11,7 @@ var jsonData = {
 		"tasks": [
 			{
 				"task": "Bourne, Jason",
-				"desc": "Treadstone Asset",
+				"desc": "Treadstone Asset.",
 				"image": "JasonBourne.jpg"
 			},
 			{
@@ -98,7 +98,8 @@ var openAgents = function(){
 		
 		var dossierImage = Ti.UI.createImageView({
 			image: "operatives/" + dataSource.image,
-			top: 0
+			top: 0,
+			width: imgContainer*2
 		});
 		
 		var detailViewText = Ti.UI.createLabel({
