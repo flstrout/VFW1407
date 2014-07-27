@@ -1,0 +1,137 @@
+// Fred L. Strout
+// VFW-1 ~ 1407
+// Project 3 - Image Gallery
+// Created On: 7/20/2014
+
+Titanium.UI.setBackgroundColor('#000');
+
+// Create Window => Navigation Window
+var menuWindow = Ti.UI.createWindow({
+	title: "Menu"
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: menuWindow
+});
+
+// Visual Elements
+var banner = Ti.UI.createLabel({
+	text: "Top Assassin",
+	font: {fontSize: 40, fontFamily: "AmericanTypewriter", fontWeight: "bold"},
+	color: "#f00",
+	textAlign: "center",
+	top: 0,
+	height: 50,
+	width: "100%"
+});
+
+var logo = Ti.UI.createImageView({
+	top: banner.top + banner.height + 10,
+	image: "EagleLogo.bmp",
+	height: 240
+});
+
+var openAgents = function(){
+	
+	// New Window => Navigation Window
+	var tableWindow = Ti.UI.createWindow({
+		title: "Assets",
+		backgroundColor: "#ccc"
+	});
+	
+	 // Create the Table
+	var tasks = Ti.UI.createTableView({
+		top: 0,
+		// Conditional not needed; we're using a Navigation Window which is iOS platform specific.
+		style: Ti.UI.iPhone.TableViewStyle.GROUPED
+	});
+	
+	// Show the Task details when the Task is clicked
+	var showDetail = function(dataSource){
+		var detailWindow = Ti.UI.createWindow({
+			title: dataSource.title
+		});
+		// Uses the this keyword to pull the detail property from the for in loop
+		var detailViewText = Ti.UI.createLabel({
+			text: dataSource.detail,
+			font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#fff",
+			top: 20,
+			left: 10,
+			right: 10
+		});
+		detailWindow.add(detailViewText);
+		navWindow.openWindow(detailWindow);
+	};
+	
+	var lists = [];
+	// Populate Section Headers & Footers
+	for (var n in jsonData){ 
+		var tableSection = Ti.UI.createTableViewSection({
+			headerTitle: jsonData[n].headerText,
+			footerTitle: jsonData[n].footerText
+		});
+		// Send Variables outside the Loop so they won't get overwritten
+		lists.push(tableSection);
+		// Populate the Sections with Data
+		for (o in jsonData[n].tasks){ 
+			var sectionDetail = Ti.UI.createTableViewRow({
+				title: jsonData[n].tasks[o].task,
+				detail: jsonData[n].tasks[o].desc,
+				hasChild: true
+			});
+			tableSection.add(sectionDetail);
+			//sectionDetail.addEventListener("click", showDetail);
+		};
+	};
+	
+	tasks.setData(lists);
+	tasks.addEventListener("click", function(event){
+		showDetail(event.source);
+	});
+	tableWindow.add(tasks);
+};
+
+// Buttons
+var agentsButton = Ti.UI.createLabel({
+	backgroundColor: "#d00",
+	text: "Operators",
+	font: {fontSize: 28, fontFamily: "Arial", fontWeight: "bold"},
+	color: "#000",
+	textAlign: "center",
+	top: logo.top + logo.height + 10,
+	height: 60,
+	borderRadius: 5,
+	left: 15,
+	right: 15
+});
+
+var assetsButton = Ti.UI.createLabel({
+	backgroundColor: "#fff",
+	text: "Assets",
+	font: {fontSize: 28, fontFamily: "Arial", fontWeight: "bold"},
+	color: "#000",
+	textAlign: "center",
+	top: agentsButton.top + agentsButton.height + 3,
+	height: 60,
+	borderRadius: 5,
+	left: 15,
+	right: 15
+});
+
+var operationsButton = Ti.UI.createLabel({
+	backgroundColor: "#039",
+	text: "Mission Planning",
+	font: {fontSize: 28, fontFamily: "Arial", fontWeight: "bold"},
+	color: "#fff",
+	textAlign: "center",
+	top: assetsButton.top + assetsButton.height + 3,
+	height: 60,
+	borderRadius: 5,
+	left: 15,
+	right: 15
+});
+
+agentsButton.addEventListener("click", openAgents);
+menuWindow.add(banner, logo, agentsButton, assetsButton, operationsButton);
+navWindow.open();
