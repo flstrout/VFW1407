@@ -6,38 +6,40 @@
  var j = myImages.length;
  
  var openImage = function() {
- 	// Forces the first image to be random
- 	i = Math.floor((Math.random()*j));
- 	
- 	// Updates the onscreen image to the random image and runs the code to get the next random image
  	var nextImage = function(){
 	 	imageView.image = "assets/"+myImages[i];
 	 	imageLabel.text = myImages[i];
 	 	imageWindow.title = myImages[i];
-	 	
 		do {
 			n = Math.floor((Math.random()*j));
 		}while (i===n);
-		
-		// Sets the new random image to the 'i' variable
+		//imageView.setImage(curImage);
 		i = n;
 	};
-	
  	var imageWindow = Ti.UI.createWindow({
 		title: myImages[i],
 		backgroundColor: "#000",
 		backgroundImage: "diamondplate.jpg",
 		backgroundRepeat: true
 	});
-	
+	var newImageButton = Ti.UI.createLabel({
+		backgroundColor: "#fff",
+		text: n,
+		font: {fontSize: 20, fontWeight: "bold"},
+		height: 35,
+		left: 15,
+		right: 15,
+		textAlign: "center",
+		top: 350
+	});
 	var imageView = Ti.UI.createImageView({
 		image: "assets/"+myImages[i],
 		top: 100,
 		left: 10,
 		right: 10,
+		borderRadius: 7,
 		height: 200
 	});
-	
 	var imageLabel = Ti.UI.createLabel({
 		text: myImages[i],
 		top: imageView.top-30,
@@ -45,20 +47,12 @@
 		color: "#fff",
 		textAlign: "center"
 	});
-	
-	// Creates a button to change the onscreen image to another random image
-	var newImageButton = Ti.UI.createLabel({
-		backgroundColor: "#ccc",
-		text: "Next Image",
-		font: {fontSize: 24, fontWeight: "bold"},
-		height: 50,
-		left: 15,
-		right: 15,
-		textAlign: "center",
-		top: 350
-	});
-	
-	nextImage();
+	do {
+		n = Math.floor((Math.random()*j));
+	}while (i===n);
+	//imageView.setImage(curImage);
+	i = n;
+	//nextImage();
 	imageWindow.add(imageView, imageLabel, newImageButton);
 	newImageButton.addEventListener("click", nextImage);
 	navWindow.openWindow(imageWindow);
