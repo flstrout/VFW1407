@@ -7,14 +7,13 @@ Titanium.UI.setBackgroundColor('#000');
 
 // Create Window => Navigation Window
 var menuWindow = Ti.UI.createWindow({
-	title: "Menu",
-	statusBarStyle: 2,
-	barColor: "#000",
-	titleAttributes: {color: "#fff"}
+	title: "Menu"
 });
 
 var navWindow = Ti.UI.iOS.createNavigationWindow({
-	window: menuWindow
+	window: menuWindow,
+	barColor: "#000",
+	color: "#fff"
 });
 
 // Visual Elements
@@ -29,7 +28,7 @@ var banner = Ti.UI.createLabel({
 });
 
 var logo = Ti.UI.createImageView({
-	top: banner.top + banner.height + 3,
+	top: banner.top + banner.height + 10,
 	image: "EagleLogo.bmp",
 	height: 240
 });
@@ -41,7 +40,7 @@ var agentsButton = Ti.UI.createLabel({
 	font: {fontSize: 28, fontFamily: "Arial", fontWeight: "bold"},
 	color: "#000",
 	textAlign: "center",
-	top: logo.top + logo.height + 3,
+	top: logo.top + logo.height + 10,
 	height: 60,
 	borderRadius: 5,
 	left: 15,
@@ -74,14 +73,7 @@ var operationsButton = Ti.UI.createLabel({
 	right: 15
 });
 
-var createdBy = Ti.UI.createLabel({
-	text: "Created By: Fred Strout / Term: 1407",
-	font: {fontSize: 8, fontFamily: "Arial"},
-	color: "#666",
-	top: operationsButton.top+operationsButton.height+7
-});
-
 var reqAssets = require("assets");
 var reqOpData = require("opData");
-menuWindow.add(banner, logo, agentsButton, assetsButton, operationsButton, createdBy);
+menuWindow.add(banner, logo, agentsButton, assetsButton, operationsButton);
 navWindow.open();

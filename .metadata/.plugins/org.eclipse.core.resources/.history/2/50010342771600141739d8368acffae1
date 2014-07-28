@@ -31,9 +31,8 @@
  	var imageWindow = Ti.UI.createWindow({
 		title: myImages[i],
 		backgroundColor: "#000",
-		statusBarStyle: 2,
-		barColor: "#000",
-		titleAttributes: {color: "#fff"}
+		backgroundImage: "diamondplate.jpg",
+		backgroundRepeat: true
 	});
 	
 	var imageView = Ti.UI.createImageView({

@@ -1,8 +1,3 @@
-// Fred L. Strout
-// VFW-1 ~ 1407
-// Project 4 - Final Comp
-// Created On: 7/28/2014
-
 // Creates a New Window for displaying the selected Image
  var i = 0;
  var n = 0;
@@ -14,7 +9,7 @@
  	// Forces the first image to be random
  	i = Math.floor((Math.random()*j));
  	
- 	// Updates the onscreen image to the random image and runs the code to get the next random image
+ 	// Updates the onscreen image to the new random image and runs the code to get the next random image
  	var nextImage = function(){
 	 	imageView.image = "assets/"+myImages[i];
 	 	imageLabel.text = myImages[i];
@@ -31,9 +26,8 @@
  	var imageWindow = Ti.UI.createWindow({
 		title: myImages[i],
 		backgroundColor: "#000",
-		statusBarStyle: 2,
-		barColor: "#000",
-		titleAttributes: {color: "#fff"}
+		backgroundImage: "diamondplate.jpg",
+		backgroundRepeat: true
 	});
 	
 	var imageView = Ti.UI.createImageView({
@@ -52,7 +46,6 @@
 		textAlign: "center"
 	});
 	
-	// Creates a button to change the onscreen image to another random image
 	var newImageButton = Ti.UI.createLabel({
 		backgroundColor: "#ccc",
 		text: "Next Image",
@@ -64,6 +57,11 @@
 		top: 350
 	});
 	
+	/*do {
+		n = Math.floor((Math.random()*j));
+	}while (i===n);
+	//imageView.setImage(curImage);
+	i = n;*/
 	nextImage();
 	imageWindow.add(imageView, imageLabel, newImageButton);
 	newImageButton.addEventListener("click", nextImage);

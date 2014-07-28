@@ -151,9 +151,8 @@ var openAgents = function(){
 	var tableWindow = Ti.UI.createWindow({
 		title: "Dossiers",
 		backgroundColor: "#000",
-		statusBarStyle: 2,
 		barColor: "#000",
-		titleAttributes: {color: "#fff"}
+		color: "#fff"
 	});
 	
 	 // Create the Table
