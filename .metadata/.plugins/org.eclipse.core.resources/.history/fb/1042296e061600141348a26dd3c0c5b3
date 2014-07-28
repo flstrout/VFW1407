@@ -1,0 +1,37 @@
+// Creates a New Window for displaying the selected Image
+ var curImage = 0;
+ var newImage = 0;
+ var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "assets");
+ var myImages = gallery.getDirectoryListing();
+ var lenImage = myImages.length;
+ var openImage = function() {
+ 	imageWindow.close(imageView, imageView);
+ 	var imageWindow = Ti.UI.createWindow({
+		title: myImages[curImage],
+		backgroundColor: "#000",
+		backgroundImage: "diamondplate.jpg",
+		backgroundRepeat: true
+	});
+	var imageView = Ti.UI.createImageView({
+		image: "assets/"+myImages[curImage],
+		top: 100,
+		left: 10,
+		right: 10,
+		borderRadius: 7,
+		height: 200
+	});
+	var imageLabel = Ti.UI.createLabel({
+		text: myImages[curImage],
+		top: imageView.top-30,
+		font: {fontSize:22, fontFamily:"Arial", fontWeight:"bold"},
+		color: "#fff",
+		textAlign: "center"
+	});
+	do {
+		newImage = Math.floor((Math.random()*lenImage)+1);
+	}while (curImage===newImage);
+	curImage = newImage;
+	imageWindow.add(imageView, imageLabel);
+	navWindow.openWindow(imageWindow);
+};
+assetsButton.addEventListener("click", openImage);

@@ -71,6 +71,7 @@ var operationsButton = Ti.UI.createLabel({
 	right: 15
 });
 
+var reqAssets = require("assets");
 var reqOpData = require("opData");
 menuWindow.add(banner, logo, agentsButton, assetsButton, operationsButton);
 navWindow.open();
