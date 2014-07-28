@@ -12,27 +12,72 @@ var jsonData = {
 			{
 				"task": "Bourne, Jason",
 				"desc": "Treadstone Asset",
-				"image": "JasonBourne.jpg"
+				"image": "JasonBourne.jpg",
+				"strength": 80,
+				"agility": 80,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 80,
+				"tenacity": 80,
+				"combat": 80,
+				"surveillance": 80,
+				"technology": 80
 			},
 			{
 				"task": "Cross, Aaron",
 				"desc": "Outcome Asset",
-				"image": "AaronCross.jpg"
+				"image": "AaronCross.jpg",
+				"strength": 80,
+				"agility": 80,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 80,
+				"tenacity": 80,
+				"combat": 80,
+				"surveillance": 80,
+				"technology": 80
 			},
 			{
 				"task": "Rath, Robert",
 				"desc": "Contact Hitman",
-				"image": "RobertRath.jpg"
+				"image": "RobertRath.jpg",
+				"strength": 80,
+				"agility": 80,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 80,
+				"tenacity": 80,
+				"combat": 80,
+				"surveillance": 80,
+				"technology": 80
 			},
 			{
 				"task": "Hayward, Maggie",
 				"desc": "Ultra Secret Kill Squad Asset",
-				"image": "MaggieHayward.jpg"
+				"image": "MaggieHayward.jpg",
+				"strength": 80,
+				"agility": 80,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 80,
+				"tenacity": 80,
+				"combat": 80,
+				"surveillance": 80,
+				"technology": 80
 			},
 			{
 				"task": "Blank, Martin",
 				"desc": "Contract Hitman",
-				"image": "MartinBlank.jpg"
+				"image": "MartinBlank.jpg",
+				"strength": 80,
+				"agility": 80,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 80,
+				"tenacity": 80,
+				"combat": 80,
+				"surveillance": 80,
+				"technology": 80
 			}
 		]
 	},
@@ -43,22 +88,58 @@ var jsonData = {
 			{
 				"task": "Connery, Sean",
 				"desc": "Agent 007 (a)",
-				"image": "SeanConnery.jpg"
+				"image": "SeanConnery.jpg",
+				"strength": 80,
+				"agility": 80,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 80,
+				"tenacity": 80,
+				"combat": 80,
+				"surveillance": 80,
+				"technology": 80
 			},
 			{
 				"task": "Moore, Roger",
 				"desc": "Agent 007 (c)",
-				"image": "RogerMoore.jpg"
+				"image": "RogerMoore.jpg",
+				"strength": 80,
+				"agility": 80,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 80,
+				"tenacity": 80,
+				"combat": 80,
+				"surveillance": 80,
+				"technology": 80
 			},
 			{
 				"task": "Brosnan, Pierce",
 				"desc": "Agent 007 (e)",
-				"image": "PierceBrosnan.jpg"
+				"image": "PierceBrosnan.jpg",
+				"strength": 80,
+				"agility": 80,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 80,
+				"tenacity": 80,
+				"combat": 80,
+				"surveillance": 80,
+				"technology": 80
 			},
 			{
 				"task": "Craig, Daniel",
 				"desc": "Agent 007 (f)",
-				"image": "DanielCraig.jpg"
+				"image": "DanielCraig.jpg",
+				"strength": 80,
+				"agility": 80,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 80,
+				"tenacity": 80,
+				"combat": 80,
+				"surveillance": 80,
+				"technology": 80
 			},
 		]
 	}
@@ -129,6 +210,15 @@ var openAgents = function(){
 				title: jsonData[n].tasks[o].task,
 				detail: jsonData[n].tasks[o].desc,
 				image: jsonData[n].tasks[o].image,
+				strength: jsonData[n].tasks[o].strength,
+				agility: jsonData[n].tasks[o].agility,
+				endurance: jsonData[n].tasks[o].endurance,
+				awareness: jsonData[n].tasks[o].awareness,
+				intelligence: jsonData[n].tasks[o].intelligence,
+				tenacity: jsonData[n].tasks[o].tenacity,
+				combat: jsonData[n].tasks[o].combat,
+				surveillance: jsonData[n].tasks[o].surveillance,
+				technology: jsonData[n].tasks[o].technology,
 				hasChild: true
 			});
 			tableSection.add(sectionDetail);
