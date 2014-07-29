@@ -6,144 +6,121 @@
 // Data
 var jsonData = {
 	"listA":{
-		"headerText": "American Operatives",
-		"footerText": "These Operatives are American",
+		"headerText": "American Targets",
+		"footerText": "These Targets are American",
 		"tasks": [
 			{
 				"task": "Bourne, Jason",
-				"desc": "Treadstone Asset",
+				"desc": "     Jason Bourne was part of a project called Treadstone, where agents were turned into ultimate assassins. He was shot while on a mission and lost his memory. Jason Bourne's memory loss is a form of amnesia, where he forgets his name and much of his past, but retains his kinetic reflexes, which lets him keep using his fighting and other skills that he acquired during his previous life. His difficulties regaining memory are magnified by the fact that prior to the incident when he was shot, his training program and his job had seriously altered his mental state and essentially made him a different person. He has eluded several attempts to close his file. It was reported that he was shot and his body fell into the Hudson River in New York, however, his body was never recovered.",
 				"image": "JasonBourne.jpg",
 				"strength": 80,
-				"agility": 80,
 				"endurance": 80,
-				"awareness": 80,
-				"intelligence": 80,
-				"tenacity": 80,
-				"combat": 80,
-				"surveillance": 80,
-				"technology": 80
+				"awareness": 90,
+				"intelligence": 95,
+				"combat": 95,
+				"surveillance": 85
 			},
 			{
 				"task": "Cross, Aaron",
-				"desc": "Outcome Asset",
+				"desc": "      Aaron Cross is a member of a black ops program called Operation Outcome whose subjects are genetically enhanced. Fearing that Operation Outcome's cover was compromised following former CIA Treadstone Agent, Jason Bourne's actions which lead to the public exposure of two other kill squad Operations, Treadstone and Blackbriar, Operation Outcomes senior staff decided to close it down and liquidate all it's assets. Basically they killed everyone that had any knowledge of the program. Aaron was able to evade the attempts to eliminate him. The last known contact was in Manila, Philipines.",
 				"image": "AaronCross.jpg",
-				"strength": 80,
-				"agility": 80,
-				"endurance": 80,
-				"awareness": 80,
-				"intelligence": 80,
-				"tenacity": 80,
-				"combat": 80,
-				"surveillance": 80,
-				"technology": 80
+				"strength": 100,
+				"endurance": 100,
+				"awareness": 90,
+				"intelligence": 100,
+				"combat": 100,
+				"surveillance": 95
 			},
 			{
 				"task": "Rath, Robert",
-				"desc": "Contact Hitman",
+				"desc": "     Robert Rath is a professional hit man. Robert is getting tired of killing people and is looking to retire, but he decides to take one more job. The target is a Seattle woman named Electra, who is a surveillance expert and information thief who is trying to sell stolen data to a group of Dutch buyers led by a man named Remy. The Dutch buyers are gunned down by rival assassin causing Rath to take pity on Electra and become her protector. They were last seen in Nasau, Bahamas.",
 				"image": "RobertRath.jpg",
-				"strength": 80,
-				"agility": 80,
+				"strength": 95,
 				"endurance": 80,
-				"awareness": 80,
-				"intelligence": 80,
-				"tenacity": 80,
+				"awareness": 85,
+				"intelligence": 85,
 				"combat": 80,
-				"surveillance": 80,
-				"technology": 80
+				"surveillance": 80
 			},
 			{
 				"task": "Hayward, Maggie",
-				"desc": "Ultra Secret Kill Squad Asset",
+				"desc": "     During a botched robbery of a drug store, junkie Maggie Hayward killed a police officer earning herself an arm full of the lethal stuff. However, a Top Secret US Government agent named Bob arranges a staged death for Maggie, so that she could be trained to harness her aggression and utilize her violent nature as a Phantom Killer for the US Government. Upon completion of her training, she was given a new identity as a saleswoman named Claudia Anne Doran. She participated in a few sanctioned hits before she herself was targeted for messing up a hit. She battled her way out and was never seen from again. Her last known whereabouts was in Washington DC.",
 				"image": "MaggieHayward.jpg",
-				"strength": 80,
-				"agility": 80,
-				"endurance": 80,
+				"strength": 65,
+				"endurance": 75,
 				"awareness": 80,
-				"intelligence": 80,
-				"tenacity": 80,
+				"intelligence": 75,
 				"combat": 80,
-				"surveillance": 80,
-				"technology": 80
+				"surveillance": 85
 			},
 			{
 				"task": "Blank, Martin",
-				"desc": "Contract Hitman",
+				"desc": "     Martin Blank is a professional assassin. He is sent on a mission to his childhood hometown, a small Detroit suburb, Grosse Pointe. By shear coincidence, his ten-year high school reunion is taking place there at the same time. While there, he reconnects with his old high school flame, Debi Newberry. He soon learns that the target just happens to be Debi's father, a Federal Judge named Bart Newberry. A rival organization contracts the hit since Martin refuses to complete it and Martin is forced to protect Debi and her father. He successfully fends off the attackers and has since restructured his business into a protection agency based out of Grosse Pointe, MI.",
 				"image": "MartinBlank.jpg",
-				"strength": 80,
-				"agility": 80,
+				"strength": 75,
 				"endurance": 80,
 				"awareness": 80,
-				"intelligence": 80,
-				"tenacity": 80,
-				"combat": 80,
-				"surveillance": 80,
-				"technology": 80
+				"intelligence": 90,
+				"combat": 75,
+				"surveillance": 70
 			}
 		]
 	},
 	"listB":{
-		"headerText": "Foreign Operatives",
-		"footerText": "These Operatives are not American",
+		"headerText": "British Targets",
+		"footerText": "These Targets are British",
 		"tasks": [
 			{
 				"task": "Connery, Sean",
-				"desc": "Agent 007 (a)",
+				"desc": "     James Bond, Agent 007 on Her Majesty's Secret Service. (1962-1971)",
 				"image": "SeanConnery.jpg",
 				"strength": 80,
-				"agility": 80,
-				"endurance": 80,
-				"awareness": 80,
-				"intelligence": 80,
-				"tenacity": 80,
+				"endurance": 85,
+				"awareness": 90,
+				"intelligence": 90,
 				"combat": 80,
-				"surveillance": 80,
-				"technology": 80
+				"surveillance": 90
 			},
 			{
 				"task": "Moore, Roger",
-				"desc": "Agent 007 (c)",
+				"desc": "     James Bond, Agent 007 on Her Majesty's Secret Service. (1973-1985)",
 				"image": "RogerMoore.jpg",
-				"strength": 80,
-				"agility": 80,
-				"endurance": 80,
+				"strength": 75,
+				"endurance": 85,
 				"awareness": 80,
-				"intelligence": 80,
-				"tenacity": 80,
+				"intelligence": 85,
 				"combat": 80,
-				"surveillance": 80,
-				"technology": 80
+				"surveillance": 85
 			},
 			{
 				"task": "Brosnan, Pierce",
-				"desc": "Agent 007 (e)",
+				"desc": "     James Bond, Agent 007 on Her Majesty's Secret Service. (1995-2005)",
 				"image": "PierceBrosnan.jpg",
 				"strength": 80,
-				"agility": 80,
-				"endurance": 80,
-				"awareness": 80,
-				"intelligence": 80,
-				"tenacity": 80,
-				"combat": 80,
-				"surveillance": 80,
-				"technology": 80
+				"endurance": 85,
+				"awareness": 85,
+				"intelligence": 90,
+				"combat": 85,
+				"surveillance": 80
 			},
 			{
 				"task": "Craig, Daniel",
-				"desc": "Agent 007 (f)",
+				"desc": "     James Bond, Agent 007 on Her Majesty's Secret Service. (2006-Present)",
 				"image": "DanielCraig.jpg",
-				"strength": 80,
-				"agility": 80,
-				"endurance": 80,
-				"awareness": 80,
+				"strength": 90,
+				"endurance": 85,
+				"awareness": 75,
 				"intelligence": 80,
-				"tenacity": 80,
-				"combat": 80,
-				"surveillance": 80,
-				"technology": 80
+				"combat": 90,
+				"surveillance": 75
 			},
 		]
 	}
 };
+
+// Global Variables
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
 
 var openAgents = function(){
 	
@@ -171,10 +148,20 @@ var openAgents = function(){
 		});
 		
 		// Uses the dataSource property to get data from the for in loop
+		var dossierName = Ti.UI.createLabel({
+			text: dataSource.title,
+			font: {fontSize: 22, fontFamily: "Arial", fontWeight: "bold"},
+			textAlign: "left",
+			color: "#0f0",
+			left: 20,
+			top: 5,
+			height: 30
+			
+		});
 		var imgContainer = Ti.UI.createView({
 			backgroundColor: "#333",
 			borderRadius: 4,
-			top: 10,
+			top: dossierName.top + dossierName.height + 5,
 			left: 10,
 			width: 140,
 			height: 210
@@ -185,16 +172,203 @@ var openAgents = function(){
 			top: 0
 		});
 		
+		var detailView = Ti.UI.createScrollView({
+			top: imgContainer.top + imgContainer.height + 5,
+			width: pWidth,
+			contentWidth: pWidth,
+			showVerticalScrollIndicator: true,
+			backgroundColor: "#000"
+		});
+		
 		var detailViewText = Ti.UI.createLabel({
 			text: dataSource.detail,
-			font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
-			color: "#fff",
-			top: 220,
+			font: {fontSize: 14, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: 1,
 			left: 10,
 			right: 10
 		});
+		detailView.add(detailViewText);
+		
+		// Physical Attributes...
+		var physical = Ti.UI.createLabel({
+			text: "Physical Attributes",
+			font: {fontSize: 14, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: imgContainer.top + 3,
+			left: 165,
+			right: 15
+		});
+		// Strength...
+		var strength = Ti.UI.createLabel({
+			text: "Strength: " + dataSource.strength,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: physical.top + 20,
+			left: 175,
+			right: 20
+		});
+		var strengthBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: strength.top + 15
+		});
+		var strengthMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.strength,
+		 	top: 0
+		});
+		strengthBar.add(strengthMeter);
+		// Endurance...
+		var endurance = Ti.UI.createLabel({
+			text: "Endurance: " + dataSource.endurance,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: strength.top + 25,
+			left: 175,
+			right: 20
+		});
+		var enduranceBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: endurance.top + 15
+		});
+		var enduranceMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.endurance,
+		 	top: 0
+		});
+		enduranceBar.add(enduranceMeter);
+		
+		// Mental Attributes...
+		var mental = Ti.UI.createLabel({
+			text: "Mental Attributes",
+			font: {fontSize: 14, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: endurance.top + 25,
+			left: 165,
+			right: 15
+		});
+		// Awareness...
+		var awareness = Ti.UI.createLabel({
+			text: "Awareness: " + dataSource.awareness,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: mental.top + 20,
+			left: 175,
+			right: 20
+		});
+		var awarenessBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: awareness.top + 15
+		});
+		var awarenessMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.awareness,
+		 	top: 0
+		});
+		awarenessBar.add(awarenessMeter);
+		// Intelligence...
+		var intelligence = Ti.UI.createLabel({
+			text: "Intelligence: " + dataSource.intelligence,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: awareness.top + 25,
+			left: 175,
+			right: 20
+		});
+		var intelligenceBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: intelligence.top + 15
+		});
+		var intelligenceMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.intelligence,
+		 	top: 0
+		});
+		intelligenceBar.add(intelligenceMeter);
+		
+		// Special Attributes...
+		var special = Ti.UI.createLabel({
+			text: "Special Attributes",
+			font: {fontSize: 14, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: intelligence.top + 25,
+			left: 165,
+			right: 15
+		});
+		// Combat...
+		var combat = Ti.UI.createLabel({
+			text: "Combat: " + dataSource.combat,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: special.top + 20,
+			left: 175,
+			right: 20
+		});
+		var combatBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: combat.top + 15
+		});
+		var combatMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.combat,
+		 	top: 0
+		});
+		combatBar.add(combatMeter);
+		// S.E.R.E....Survival-Evasion-Resistance-Escape
+		var sere = Ti.UI.createLabel({
+			text: "S.E.R.E. Rating: " + dataSource.surveillance,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: combat.top + 25,
+			left: 175,
+			right: 20
+		});
+		var sereBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: sere.top + 15
+		});
+		var sereMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.surveillance,
+		 	top: 0
+		});
+		sereBar.add(sereMeter);
+		
 		imgContainer.add(dossierImage);
-		detailWindow.add(imgContainer, detailViewText);
+		detailWindow.add(imgContainer, detailView, dossierName,
+			physical, strength, strengthBar, endurance, enduranceBar,
+			mental, awareness, awarenessBar, intelligence, intelligenceBar,
+			special, combat, combatBar, sere, sereBar);
 		navWindow.openWindow(detailWindow);
 	};
 	

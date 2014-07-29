@@ -1,0 +1,400 @@
+// Fred L. Strout
+// VFW-1 ~ 1407
+// Project 4 - Final Comp
+// Created On: 7/27/2014
+
+// Data
+var jsonData = {
+	"listA":{
+		"headerText": "American Targets",
+		"footerText": "These Targets are American",
+		"tasks": [
+			{
+				"task": "Bourne, Jason",
+				"desc": "Treadstone Asset",
+				"image": "JasonBourne.jpg",
+				"strength": 80,
+				"endurance": 80,
+				"awareness": 90,
+				"intelligence": 95,
+				"combat": 95,
+				"surveillance": 85
+			},
+			{
+				"task": "Cross, Aaron",
+				"desc": "Outcome Asset",
+				"image": "AaronCross.jpg",
+				"strength": 100,
+				"endurance": 100,
+				"awareness": 90,
+				"intelligence": 100,
+				"combat": 100,
+				"surveillance": 95
+			},
+			{
+				"task": "Rath, Robert",
+				"desc": "Contract Hitman",
+				"image": "RobertRath.jpg",
+				"strength": 95,
+				"endurance": 80,
+				"awareness": 85,
+				"intelligence": 85,
+				"combat": 80,
+				"surveillance": 80
+			},
+			{
+				"task": "Hayward, Maggie",
+				"desc": "     During a botched robbery of a drug store, junkie Maggie Hayward killed a police officer earning herself an arm full of the lethal stuff. However, a Top Secret US government agent named Bob arranges a staged death, so Maggie's violent nature could be harnesses so that she could be honed into a lethal Phantom Killer for the US Government. Upon completion of her training, she was given a new identity as a saleswoman named Claudia Anne Doran. She participated in a few sanctioned hits before her she herself was targeted for messing up a hit. She battled her way out and remains at large today.",
+				"image": "MaggieHayward.jpg",
+				"strength": 65,
+				"endurance": 75,
+				"awareness": 80,
+				"intelligence": 75,
+				"combat": 80,
+				"surveillance": 85
+			},
+			{
+				"task": "Blank, Martin",
+				"desc": "Contract Hitman",
+				"image": "MartinBlank.jpg",
+				"strength": 75,
+				"endurance": 80,
+				"awareness": 80,
+				"intelligence": 90,
+				"combat": 75,
+				"surveillance": 70
+			}
+		]
+	},
+	"listB":{
+		"headerText": "British Targets",
+		"footerText": "These Targets are British",
+		"tasks": [
+			{
+				"task": "Connery, Sean",
+				"desc": "Agent 007 (a)",
+				"image": "SeanConnery.jpg",
+				"strength": 80,
+				"endurance": 85,
+				"awareness": 90,
+				"intelligence": 90,
+				"combat": 80,
+				"surveillance": 90
+			},
+			{
+				"task": "Moore, Roger",
+				"desc": "Agent 007 (c)",
+				"image": "RogerMoore.jpg",
+				"strength": 75,
+				"endurance": 85,
+				"awareness": 80,
+				"intelligence": 85,
+				"combat": 80,
+				"surveillance": 85
+			},
+			{
+				"task": "Brosnan, Pierce",
+				"desc": "Agent 007 (e)",
+				"image": "PierceBrosnan.jpg",
+				"strength": 80,
+				"endurance": 85,
+				"awareness": 85,
+				"intelligence": 90,
+				"combat": 85,
+				"surveillance": 80
+			},
+			{
+				"task": "Craig, Daniel",
+				"desc": "Agent 007 (f)",
+				"image": "DanielCraig.jpg",
+				"strength": 90,
+				"endurance": 85,
+				"awareness": 75,
+				"intelligence": 80,
+				"combat": 90,
+				"surveillance": 75
+			},
+		]
+	}
+};
+
+var openAgents = function(){
+	
+	// New Window => Navigation Window
+	var tableWindow = Ti.UI.createWindow({
+		title: "Dossiers",
+		backgroundColor: "#000",
+		statusBarStyle: 2,
+		barColor: "#000",
+		titleAttributes: {color: "#fff"}
+	});
+	
+	 // Create the Table
+	var tasks = Ti.UI.createTableView({
+		top: 0,
+		// Conditional not needed; we're using a Navigation Window which is iOS platform specific.
+		style: Ti.UI.iPhone.TableViewStyle.GROUPED
+	});
+	
+	// Show the Task details when the Task is clicked
+	var showDetail = function(dataSource){
+		var detailWindow = Ti.UI.createWindow({
+			title: dataSource.title,
+			backgroundColor: "#000"
+		});
+		
+		// Uses the dataSource property to get data from the for in loop
+		var dossierName = Ti.UI.createLabel({
+			text: dataSource.title,
+			font: {fontSize: 22, fontFamily: "Arial", fontWeight: "bold"},
+			textAlign: "left",
+			color: "#0f0",
+			left: 20,
+			top: 5,
+			height: 30
+			
+		});
+		var imgContainer = Ti.UI.createView({
+			backgroundColor: "#333",
+			borderRadius: 4,
+			top: dossierName.top + dossierName.height + 5,
+			left: 10,
+			width: 140,
+			height: 210
+		});
+		
+		var dossierImage = Ti.UI.createImageView({
+			image: "operatives/" + dataSource.image,
+			top: 0
+		});
+		
+		var detailViewText = Ti.UI.createLabel({
+			text: dataSource.detail,
+			font: {fontSize: 14, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: imgContainer.top + imgContainer.height + 5,
+			left: 10,
+			right: 10
+		});
+		
+		// Physical Attributes...
+		var physical = Ti.UI.createLabel({
+			text: "Physical Attributes",
+			font: {fontSize: 14, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: imgContainer.top + 3,
+			left: 165,
+			right: 15
+		});
+		// Strength...
+		var strength = Ti.UI.createLabel({
+			text: "Strength: " + dataSource.strength,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: physical.top + 20,
+			left: 175,
+			right: 20
+		});
+		var strengthBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: strength.top + 15
+		});
+		var strengthMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.strength,
+		 	top: 0
+		});
+		strengthBar.add(strengthMeter);
+		// Endurance...
+		var endurance = Ti.UI.createLabel({
+			text: "Endurance: " + dataSource.endurance,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: strength.top + 25,
+			left: 175,
+			right: 20
+		});
+		var enduranceBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: endurance.top + 15
+		});
+		var enduranceMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.endurance,
+		 	top: 0
+		});
+		enduranceBar.add(enduranceMeter);
+		
+		// Mental Attributes...
+		var mental = Ti.UI.createLabel({
+			text: "Mental Attributes",
+			font: {fontSize: 14, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: endurance.top + 25,
+			left: 165,
+			right: 15
+		});
+		// Awareness...
+		var awareness = Ti.UI.createLabel({
+			text: "Awareness: " + dataSource.awareness,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: mental.top + 20,
+			left: 175,
+			right: 20
+		});
+		var awarenessBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: awareness.top + 15
+		});
+		var awarenessMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.awareness,
+		 	top: 0
+		});
+		awarenessBar.add(awarenessMeter);
+		// Intelligence...
+		var intelligence = Ti.UI.createLabel({
+			text: "Intelligence: " + dataSource.intelligence,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: awareness.top + 25,
+			left: 175,
+			right: 20
+		});
+		var intelligenceBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: intelligence.top + 15
+		});
+		var intelligenceMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.intelligence,
+		 	top: 0
+		});
+		intelligenceBar.add(intelligenceMeter);
+		
+		// Special Attributes...
+		var special = Ti.UI.createLabel({
+			text: "Special Attributes",
+			font: {fontSize: 14, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: intelligence.top + 25,
+			left: 165,
+			right: 15
+		});
+		// Combat...
+		var combat = Ti.UI.createLabel({
+			text: "Combat: " + dataSource.combat,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: special.top + 20,
+			left: 175,
+			right: 20
+		});
+		var combatBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: combat.top + 15
+		});
+		var combatMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.combat,
+		 	top: 0
+		});
+		combatBar.add(combatMeter);
+		// S.E.R.E....Survival-Evasion-Resistance-Escape
+		var sere = Ti.UI.createLabel({
+			text: "S.E.R.E. Rating: " + dataSource.surveillance,
+			font: {fontSize: 10, fontFamily: "Arial", fontWeight: "bold"},
+			color: "#0f0",
+			top: combat.top + 25,
+			left: 175,
+			right: 20
+		});
+		var sereBar = Ti.UI.createView({
+		 	backgroundColor: "#fff",
+		 	borderRadius: 2,
+		 	height: 4,
+		 	left: 170,
+		 	width: 100,
+		 	top: sere.top + 15
+		});
+		var sereMeter = Ti.UI.createView({
+		 	backgroundColor: "#f00",
+		 	left: 0,
+		 	width: dataSource.surveillance,
+		 	top: 0
+		});
+		sereBar.add(sereMeter);
+		
+		imgContainer.add(dossierImage);
+		detailWindow.add(imgContainer, detailViewText, dossierName,
+			physical, strength, strengthBar, endurance, enduranceBar,
+			mental, awareness, awarenessBar, intelligence, intelligenceBar,
+			special, combat, combatBar, sere, sereBar);
+		navWindow.openWindow(detailWindow);
+	};
+	
+	var lists = [];
+	// Populate Section Headers & Footers
+	for (var n in jsonData){ 
+		var tableSection = Ti.UI.createTableViewSection({
+			headerTitle: jsonData[n].headerText,
+			footerTitle: jsonData[n].footerText
+		});
+		// Send Variables outside the Loop so they won't get overwritten
+		lists.push(tableSection);
+		// Populate the Sections with Data
+		for (o in jsonData[n].tasks){ 
+			var sectionDetail = Ti.UI.createTableViewRow({
+				title: jsonData[n].tasks[o].task,
+				detail: jsonData[n].tasks[o].desc,
+				image: jsonData[n].tasks[o].image,
+				strength: jsonData[n].tasks[o].strength,
+				agility: jsonData[n].tasks[o].agility,
+				endurance: jsonData[n].tasks[o].endurance,
+				awareness: jsonData[n].tasks[o].awareness,
+				intelligence: jsonData[n].tasks[o].intelligence,
+				tenacity: jsonData[n].tasks[o].tenacity,
+				combat: jsonData[n].tasks[o].combat,
+				surveillance: jsonData[n].tasks[o].surveillance,
+				technology: jsonData[n].tasks[o].technology,
+				hasChild: true
+			});
+			tableSection.add(sectionDetail);
+			//sectionDetail.addEventListener("click", showDetail);
+		};
+	};
+	
+	tasks.setData(lists);
+	tasks.addEventListener("click", function(event){
+		showDetail(event.source);
+	});
+	tableWindow.add(tasks);
+	navWindow.openWindow(tableWindow);
+};	
+agentsButton.addEventListener("click", openAgents);
