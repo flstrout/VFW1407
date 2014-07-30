@@ -1,0 +1,121 @@
+// Fred L. Strout
+// VFW-1 ~ 1407
+// Project 4 - Final Comp
+// Created On: 7/30/2014
+
+var targets = {
+	"Targets": [
+		{
+		"name": "Bourne, Jason",
+		"opName": "Bourne to Kill",
+		"ao": "Paris, France"
+		},
+		{
+		"name": "Cross, Aaron",
+		"opName": "Crossed Out",
+		"ao": "Manila, Philippines"
+		},
+		{
+		"name": "Rath, Robert",
+		"opName": "Feel my Rath",
+		"ao": "Portland, Oregon"
+		},
+		{
+		"name": "Hayward, Maggie",
+		"opName": "Maggie's got a Gun",
+		"ao": "Washington D.C."
+		},
+		{
+		"name": "Blank, Martin",
+		"opName": "Shooting Blanks",
+		"ao": "Grosse Pointe, Michigan"
+		},
+		{
+		"name": "Connery, Sean",
+		"opName": "Sean of the Dead",
+		"ao": "Nassau, Bahamas"
+		},
+		{
+		"name": "Moore, Roger",
+		"opName": "There's Moore where that came from",
+		"ao": "Rio de Janeiro, Brazil"
+		},
+		{
+		"name": "Brosnan, Pierce",
+		"opName": "Pierced through the heart",
+		"ao": "Havannah, Cuba"
+		},
+		{
+		"name": "Craig, Daniel",
+		"opName": "Craigslist Hit",
+		"ao": "Venice, Italy"
+		}
+	]
+};
+
+for (var n in targets){ 
+	var pickerRows = Ti.UI.createPickerRow({
+		target: targets[n].name,
+		opName: targets[n].opName,
+		ao: targets[n].ao
+	});
+	console.log(target + ", " + opName + ", " + ao);
+};
+
+		
+var openPlan = function(){
+	navWindow.openWindow(planWindow);
+};
+
+var planWindow = Ti.UI.createWindow({
+	title: "Mission Planning",
+	backgroundColor: "#000",
+	statusBarStyle: 2,
+	barColor: "#000",
+	titleAttributes: {color: "#fff"}
+});
+
+var codenameLabel = Ti.UI.createLabel({
+	text: "What is your Codename?",
+	top: 15,
+	height: 25,
+	left: 10,
+	right: 10,
+	font: {fontSize:16, fontFamily:"Arial", fontWeight:"bold"},
+	color: "#fff",
+	textAlign: "left"
+});
+
+var codenameInput = Ti.UI.createTextField({
+	borderRadius: 3,
+	backgroundColor: "#fff",
+	top: codenameLabel.top + codenameLabel.height,
+	paddingLeft: 5,
+	height: 35,
+	color: "#333",
+	left: 5,
+	width: 275
+});
+
+var targetLabel = Ti.UI.createLabel({
+	text: "Select your target.",
+	top: codenameInput.top + codenameInput.height + 10,
+	height: 25,
+	left: 5,
+	right: 5,
+	font: {fontSize:16, fontFamily:"Arial", fontWeight:"bold"},
+	color: "#fff",
+	textAlign: "left"
+});
+
+var targetPicker = Ti.UI.createPicker({
+	borderRadius: 3,
+	backgroundColor: "#fff",
+	height: 150,
+	width: 200,
+	top: targetLabel.top + targetLabel.height,
+	left: 5
+});
+
+planWindow.add(codenameLabel, codenameInput, targetLabel, targetPicker);
+operationsButton.addEventListener("click", openPlan);

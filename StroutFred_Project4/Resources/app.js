@@ -75,7 +75,7 @@ var operationsButton = Ti.UI.createLabel({
 });
 
 var createdBy = Ti.UI.createLabel({
-	text: "Created By: Fred Strout / Term: 1407",
+	text: "Created By: Fred Strout / VFW-1407",
 	font: {fontSize: 8, fontFamily: "Arial"},
 	color: "#666",
 	top: operationsButton.top+operationsButton.height+7
@@ -83,5 +83,6 @@ var createdBy = Ti.UI.createLabel({
 
 var reqAssets = require("assets");
 var reqOpData = require("opData");
+var reqMission = require("mission");
 menuWindow.add(banner, logo, agentsButton, assetsButton, operationsButton, createdBy);
 navWindow.open();

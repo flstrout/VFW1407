@@ -3,7 +3,6 @@
 // Project 4 - Final Comp
 // Created On: 7/28/2014
 
-// Creates a New Window for displaying the selected Image
  var i = 0;
  var n = 0;
  var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "assets");
@@ -23,11 +22,11 @@
 		do {
 			n = Math.floor((Math.random()*j));
 		}while (i===n);
-		
 		// Sets the new random image to the 'i' variable
 		i = n;
 	};
 	
+	// Creates a New Window for displaying the already determined random Image
  	var imageWindow = Ti.UI.createWindow({
 		title: myImages[i],
 		backgroundColor: "#000",

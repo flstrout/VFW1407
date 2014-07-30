@@ -1,0 +1,51 @@
+// Fred L. Strout
+// VFW-1 ~ 1407
+// Project 4 - Final Comp
+// Created On: 7/30/2014
+
+var openPlan = function(){
+	navWindow.openWindow(planWindow);
+};
+var planWindow = Ti.UI.createWindow({
+	title: "Mission Planning",
+	backgroundColor: "#000",
+	statusBarStyle: 2,
+	barColor: "#000",
+	titleAttributes: {color: "#fff"}
+});
+
+var targetLabel = Ti.UI.createLabel({
+	text: "Select your target.",
+	top: 15,
+	height: 25,
+	left: 10,
+	right: 10,
+	font: {fontSize:16, fontFamily:"Arial", fontWeight:"bold"},
+	color: "#fff",
+	textAlign: "left"
+});
+
+var targetInput = Ti.UI.createTextField({
+	borderRadius: 3,
+	backgroundColor: "#fff",
+	top: targetLabel.top + targetLabel.height,
+	paddingLeft: 5,
+	height: 35,
+	color: "#ccc",
+	left: 5,
+	width: 275
+});
+
+var styleLabel = Ti.UI.createLabel({
+	text: "Select your target.",
+	top: targetInput.top + targetInput.height + 10,
+	height: 10,
+	left: 5,
+	right: 5,
+	font: {fontSize:16, fontFamily:"Arial", fontWeight:"bold"},
+	color: "#fff",
+	textAlign: "left"
+});
+
+planWindow.add(targetLabel, targetInput, styleLabel);
+operationsButton.addEventListener("click", openPlan);
