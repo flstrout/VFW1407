@@ -6,8 +6,20 @@
 var targets = ["Bourne, Jason", "Cross, Aaron", "Rath, Robert", "Hayward, Maggie", "Blank, Martin", "Connery, Sean", "Moore, Roger", "Brosnan, Pierce", "Craig, Daniel"];
 var opName = ["Bourne to Kill", "Crossed Out", "Feel my Rath", "Maggie's got a Gun", "Shooting Blanks", "Sean of the Dead", "There's Moore where that came from", "Pierced through the Heart", "Craigslist Hit"];
 var areaOp = ["Paris, France", "Manila, Philippines", "Portland, Oregon", "Washington D.C.", "Grosse Pointe, Michigan", "Nassau, Bahamas", "Rio de Janeiro, Brazil", "Havannah, Cuba", "Venice, Italy"];
-var column1 = Ti.UI.createPickerColumn({
-	backgroundColor: "#000"
+var rowID = "";
+var rowOP = "";
+var rowAO = "";
+var column1 = Ti.UI.createPickerColumn();
+
+var uiBorder = Ti.UI.createView({
+	borderColor: "#007aff",
+	borderRadius: 15,
+	borderWidth: 2,
+	top: 5,
+	left: 2,
+	right: 2,
+	backgroundColor: "transparent",
+	height: 352
 });
 
 for(var i=0, ilen=targets.length; i<ilen; i++){
@@ -60,7 +72,6 @@ var codenameInput = Ti.UI.createTextField({
 	paddingLeft: 5,
 	height: 35,
 	color: "#333",
-	left: 5,
 	width: 275
 });
 
@@ -68,8 +79,8 @@ var targetLabel = Ti.UI.createLabel({
 	text: "Select your target.",
 	top: codenameInput.top + codenameInput.height + 10,
 	height: 25,
-	left: 5,
-	right: 5,
+	left: 10,
+	right: 10,
 	font: {fontSize:16, fontFamily:"Arial", fontWeight:"bold"},
 	color: "#fff",
 	textAlign: "left"
@@ -81,14 +92,95 @@ var targetPicker = Ti.UI.createPicker({
 	backgroundColor: "#000",
 	height: "auto",
 	width: 250,
-	top: targetLabel.top + targetLabel.height,
-	left: 5
+	top: targetLabel.top + targetLabel.height
+});
+
+var makePlanButton = Ti.UI.createButton({
+	title: "  Generate Mission Briefing",
+	style: Ti.UI.iPhone.SystemButtonStyle.BAR,
+	borderColor: "#007aff",
+	borderWidth: 2,
+	borderRadius: 15,
+	backgroundColor: "#000",
+	top: targetLabel.top + 252,
+	height: 38,
+	width: 235
 });
 
 targetPicker.addEventListener("change", function(event){
-	console.log(event.row.id + ", " + event.row.op + ", " + event.row.ao);
+	rowID = event.row.id;
+	rowOP = event.row.op;
+	rowAO = event.row.ao;
 });
 
-planWindow.add(codenameLabel, codenameInput, targetLabel, targetPicker);
-targetPicker.setSelectedRow(0, 2, false);
+var makePlan = function(){
+	var missionBrief = Ti.UI.createWindow({
+		title: rowOP,
+		backgroundColor: "#fff",
+		statusBarStyle: 2,
+		barColor: "#000",
+		titleAttributes: {color: "#fff"}
+	});
+	
+	var topSecretLabel = Ti.UI.createLabel({
+		text: "Top Secret",
+		font: {fontSize: 26, fontFamily: "AmericanTypewriter", fontWeight: "bold"},
+		color: "#c00",
+		textAlign: "center",
+		top: 10,
+		left: 5,
+		right: 5,
+		height: 28
+	});
+	
+	var eyesOnlyLabel = Ti.UI.createLabel({
+		text: "For Your Eyes Only",
+		font: {fontSize: 12, fontFamily: "AmericanTypewriter", fontWeight: "bold"},
+		color: "#c00",
+		textAlign: "center",
+		top: topSecretLabel.top + topSecretLabel.height + 2,
+		left: 5,
+		right: 5,
+		height: 14
+	});
+	
+	var agentLabel = Ti.UI.createLabel({
+		text: "To:  Agent " + codenameInput.value,
+		font: {fontSize: 18, fontFamily: "AmericanTypewriter", fontWeight: "bold"},
+		top: eyesOnlyLabel.top + eyesOnlyLabel.height + 10,
+		left: 5,
+		height: 25
+	});
+	
+	var misLabel = Ti.UI.createLabel({
+		text: "Re:  Operation " + rowOP,
+		font: {fontSize: 18, fontFamily: "AmericanTypewriter", fontWeight: "bold"},
+		top: agentLabel.top + agentLabel.height + 5,
+		left: 5,
+		height: 45
+	});
+	
+	var tarLabel = Ti.UI.createLabel({
+		text: "Target:  " + rowID,
+		font: {fontSize: 18, fontFamily: "AmericanTypewriter", fontWeight: "bold"},
+		top: 175,
+		left: 5,
+		height: 20
+	});
+	
+	var locLabel = Ti.UI.createLabel({
+		text: "Last Known Location:  " + rowAO,
+		font: {fontSize: 18, fontFamily: "AmericanTypewriter", fontWeight: "bold"},
+		top: tarLabel.top + tarLabel.height,
+		left: 5,
+		height: 65
+	});
+	
+	missionBrief.add(topSecretLabel, eyesOnlyLabel, agentLabel, misLabel, tarLabel, locLabel);
+	navWindow.openWindow(missionBrief);
+};
+
+makePlanButton.addEventListener("click", makePlan);
+planWindow.add(uiBorder, codenameLabel, codenameInput, targetLabel, targetPicker, makePlanButton);
+targetPicker.setSelectedRow(0, 4, false);
 operationsButton.addEventListener("click", openPlan);
