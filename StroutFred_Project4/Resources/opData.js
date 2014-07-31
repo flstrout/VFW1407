@@ -1,6 +1,6 @@
 // Fred L. Strout
 // VFW-1 ~ 1407
-// Project 4 - Final Comp
+// Project 4 - Sectioned Table with separate Detail Data Window
 // Created On: 7/27/2014
 
 // Data

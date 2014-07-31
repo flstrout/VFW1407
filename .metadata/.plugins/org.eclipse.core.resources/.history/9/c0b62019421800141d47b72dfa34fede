@@ -1,17 +1,15 @@
 // Fred L. Strout
 // VFW-1 ~ 1407
-// Project 4 - Researched Objects
+// Project 4 - Final Comp
 // Created On: 7/30/2014
 
-// Data - Could have used a JSON
 var targets = ["Bourne, Jason", "Cross, Aaron", "Rath, Robert", "Hayward, Maggie", "Blank, Martin", "Connery, Sean", "Moore, Roger", "Brosnan, Pierce", "Craig, Daniel"];
 var opName = ["Bourne to Kill", "Crossed Out", "Feel my Rath", "Maggie's got a Gun", "Shooting Blanks", "Sean of the Dead", "There's Moore where that came from", "Pierced through the Heart", "Craigslist Hit"];
 var areaOp = ["Paris, France", "Manila, Philippines", "Portland, Oregon", "Washington D.C.", "Grosse Pointe, Michigan", "Nassau, Bahamas", "Rio de Janeiro, Brazil", "Havannah, Cuba", "Venice, Italy"];
-
-// Global Variables
 var rowID = "";
 var rowOP = "";
 var rowAO = "";
+var column1 = Ti.UI.createPickerColumn();
 
 var uiBorder = Ti.UI.createView({
 	borderColor: "#007aff",
@@ -24,17 +22,13 @@ var uiBorder = Ti.UI.createView({
 	height: 352
 });
 
-// --Picker--
-var column1 = Ti.UI.createPickerColumn();
-
-// For loop to populate the Picker rows
 for(var i=0, ilen=targets.length; i<ilen; i++){
   var row = Ti.UI.createPickerRow({
   	id: targets[i],
   	op: opName[i],
   	ao: areaOp[i],
   });
-  
+    
   var label = Ti.UI.createLabel({
     color:"#333",
     font:{fontSize:16,fontWeight:'bold'},
@@ -47,8 +41,7 @@ for(var i=0, ilen=targets.length; i<ilen; i++){
   row.add(label);
   column1.addRow(row);
 };
-
-// -- Main Window - User Input --	
+	
 var openPlan = function(){
 	navWindow.openWindow(planWindow);
 };
@@ -72,7 +65,6 @@ var codenameLabel = Ti.UI.createLabel({
 	textAlign: "left"
 });
 
-// Codename Input
 var codenameInput = Ti.UI.createTextField({
 	borderRadius: 3,
 	backgroundColor: "#fff",
@@ -94,7 +86,6 @@ var targetLabel = Ti.UI.createLabel({
 	textAlign: "left"
 });
 
-// Select Target Picker
 var targetPicker = Ti.UI.createPicker({
 	columns: [column1],
 	borderRadius: 3,
@@ -104,7 +95,6 @@ var targetPicker = Ti.UI.createPicker({
 	top: targetLabel.top + targetLabel.height
 });
 
-// Button to open the Mission Briefing Document
 var makePlanButton = Ti.UI.createButton({
 	title: "  Generate Mission Briefing",
 	style: Ti.UI.iPhone.SystemButtonStyle.BAR,
@@ -117,14 +107,12 @@ var makePlanButton = Ti.UI.createButton({
 	width: 235
 });
 
-// Saves the data selected in the Picker into the Globally Defined Variables
 targetPicker.addEventListener("change", function(event){
 	rowID = event.row.id;
 	rowOP = event.row.op;
 	rowAO = event.row.ao;
 });
 
-// -- Mission Briefing Document --  This document gets it's data from the Codename Input Value and the 'Picker' populated Global Variables
 var makePlan = function(){
 	var missionBrief = Ti.UI.createWindow({
 		title: rowOP,
@@ -175,7 +163,7 @@ var makePlan = function(){
 	var tarLabel = Ti.UI.createLabel({
 		text: "Target:  " + rowID,
 		font: {fontSize: 18, fontFamily: "AmericanTypewriter", fontWeight: "bold"},
-		top: 175,
+		top: 150,
 		left: 5,
 		height: 20
 	});

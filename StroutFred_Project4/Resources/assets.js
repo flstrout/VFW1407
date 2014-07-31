@@ -1,6 +1,6 @@
 // Fred L. Strout
 // VFW-1 ~ 1407
-// Project 4 - Final Comp
+// Project 4 - Random Image
 // Created On: 7/28/2014
 
  var i = 0;

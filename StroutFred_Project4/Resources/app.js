@@ -1,6 +1,6 @@
 // Fred L. Strout
 // VFW-1 ~ 1407
-// Project 4 - Final Comp
+// Project 4 - Main Menu
 // Created On: 7/26/2014
 
 Titanium.UI.setBackgroundColor('#000');
